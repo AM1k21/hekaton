@@ -116,6 +116,35 @@
         }
       ],
       "seenAlert": true
+    },
+    {
+      "id": "e1mv071bemgtjnkya",
+      "email": "admin@admin.com",
+      "password": "1760626659538:8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+      "createdAt": "2025-10-16T14:57:39.538Z",
+      "notifications": true,
+      "emailNotifications": true,
+      "notificationPreferences": [],
+      "seenAlert": true
+    },
+    {
+      "id": "p00wtbzhxmgtkcmx5",
+      "email": "jonysbina@gmail.com",
+      "password": "1760627828489:d37cf32b9f602bba3eabac04ce5ad45763dd874d139268f3309bb8d473cb4930",
+      "createdAt": "2025-10-16T15:17:08.489Z",
+      "notifications": true,
+      "emailNotifications": true,
+      "notificationPreferences": [
+        {
+          "zajmy": [
+            "Ekonomika A Trh Práce"
+          ],
+          "lokace": "50.209211, 15.832751",
+          "radius": 40,
+          "displayName": "Hradec Králové"
+        }
+      ],
+      "seenAlert": true
     }
   ],
   "categorizedInfo": [
