@@ -100,7 +100,7 @@ Shrnutí:`;
             model: "gemini-2.5-flash-lite",
             contents: contents, 
             config: {
-                systemInstruction: "Nesmíš používat markdown."
+                systemInstruction: "Nesmíš používat markdown. Musíš shrnout pouze to nejpodstatnější. Použij základní HTML styly pro formátování. A odděluj věci do hezkých odstavců.",
             }
         });
 

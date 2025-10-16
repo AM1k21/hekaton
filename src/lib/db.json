@@ -19,24 +19,28 @@
       "notificationPreferences": [
         {
           "zajmy": [
-            "Kraj A Dotace"
+            "Ekonomika A Trh Práce"
           ],
-          "lokace": "50.560885, 15.913050",
-          "radius": 74
-        },
-        {
-          "zajmy": [
-            "Investice Kraje"
-          ],
-          "lokace": "50.204371, 15.829837",
-          "radius": 10
+          "lokace": "50.209211, 15.832751",
+          "radius": 75,
+          "displayName": "Hradec Králové"
         },
         {
           "zajmy": [
             "Ekonomika A Trh Práce"
           ],
-          "lokace": "50.416702, 16.162287",
-          "radius": 10
+          "lokace": "50.204049, 15.829530",
+          "radius": 100,
+          "displayName": "Hradec Králové"
+        },
+        {
+          "zajmy": [
+            "Ekonomika A Trh Práce",
+            "Veřejná Doprava A Silnice"
+          ],
+          "lokace": "50.204139, 15.829532",
+          "radius": 100,
+          "displayName": "Hradec Králové"
         }
       ]
     },
@@ -47,7 +51,16 @@
       "createdAt": "2025-10-16T08:20:01.507Z",
       "notifications": true,
       "emailNotifications": false,
-      "notificationPreferences": []
+      "notificationPreferences": [
+        {
+          "zajmy": [
+            "Ekonomika A Trh Práce"
+          ],
+          "lokace": "50.209211, 15.832751",
+          "radius": 88,
+          "displayName": "Hradec Králové"
+        }
+      ]
     },
     {
       "id": "lrok1h511mgtbamxt",
@@ -67,6 +80,42 @@
     }
   ],
   "categorizedInfo": [
+    {
+      "data": {
+        "typ": [
+          "Digitální objekt",
+          "Informace na úřední desce"
+        ],
+        "iri": "https://khk.cz/zdroj/úřední-deska/informace/rozhodnuti-o-zruseni-vyberoveho-rizeni-na-obsazeni-pracovni-pozice-odborny/referent/ka-oddeleni-zdravotnictvi",
+        "url": "https://www.khk.cz/urad/uredni-deska/rozhodnuti-o-zruseni-vyberoveho-rizeni-na-obsazeni-pracovni-pozice-odborny/referent/ka-oddeleni-zdravotnictvi",
+        "vyvěšení": {
+          "typ": "Časový okamžik",
+          "datum": "2025-10-16"
+        },
+        "relevantní_do": {
+          "typ": "Časový okamžik",
+          "datum": "2025-10-21"
+        },
+        "okruh": {
+          "cs": "Volná místa KÚ"
+        },
+        "dokument": [
+          {
+            "typ": "Digitální objekt",
+            "název": {
+              "cs": "VR_39_25_rozhodnutí o zrušení.pdf"
+            },
+            "url": "https://www.khk.cz/system/files/2025-10/VR_39_25_rozhodnut%C3%AD%20o%20zru%C5%A1en%C3%AD.pdf"
+          }
+        ],
+        "název": {
+          "cs": "Rozhodnutí o zrušení výběrového řízení na obsazení pracovní pozice: odborný/á referent/ka oddělení zdravotnictví"
+        }
+      },
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
+    },
     {
       "data": {
         "typ": [
@@ -100,8 +149,8 @@
         }
       },
       "category": "Ekonomika A Trh Práce",
-      "guessedLatitude": 50.1797,
-      "guessedLongitude": 15.9014
+      "guessedLatitude": 50.2007842,
+      "guessedLongitude": 15.993087
     },
     {
       "data": {
@@ -172,8 +221,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.4333,
-      "guessedLongitude": 16.2833
+      "guessedLatitude": 50.6257349,
+      "guessedLongitude": 16.2395252
     },
     {
       "data": {
@@ -208,8 +257,8 @@
         }
       },
       "category": "Životní Prostředí",
-      "guessedLatitude": 50.2167,
-      "guessedLongitude": 15.8667
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -251,8 +300,8 @@
         }
       },
       "category": "Veřejná Doprava A Silnice",
-      "guessedLatitude": 50.3333,
-      "guessedLongitude": 15.9833
+      "guessedLatitude": 50.3946132,
+      "guessedLongitude": 16.0435698
     },
     {
       "data": {
@@ -287,8 +336,8 @@
         }
       },
       "category": "Kultura A Cestovní Ruch",
-      "guessedLatitude": 50.2053,
-      "guessedLongitude": 15.8307
+      "guessedLatitude": 50.2092113,
+      "guessedLongitude": 15.8327512
     },
     {
       "data": {
@@ -402,8 +451,8 @@
         }
       },
       "category": "Veřejná Doprava A Silnice",
-      "guessedLatitude": 50.25,
-      "guessedLongitude": 15.9667
+      "guessedLatitude": 50.213913,
+      "guessedLongitude": 15.9306408
     },
     {
       "data": {
@@ -445,8 +494,8 @@
         }
       },
       "category": "Veřejná Doprava A Silnice",
-      "guessedLatitude": 50.3333,
-      "guessedLongitude": 15.9833
+      "guessedLatitude": 50.3946132,
+      "guessedLongitude": 16.0435698
     },
     {
       "data": {
@@ -488,8 +537,8 @@
         }
       },
       "category": "Veřejná Doprava A Silnice",
-      "guessedLatitude": 50.3833,
-      "guessedLongitude": 15.7833
+      "guessedLatitude": 50.4007488,
+      "guessedLongitude": 15.8714928
     },
     {
       "data": {
@@ -524,8 +573,8 @@
         }
       },
       "category": "Ekonomika A Trh Práce",
-      "guessedLatitude": 50.355,
-      "guessedLongitude": 15.7033
+      "guessedLatitude": 50.3555139,
+      "guessedLongitude": 15.9189129
     },
     {
       "data": {
@@ -559,9 +608,9 @@
           "cs": "Záměr č. 83/2025-pronajmout část pozemku  v k. ú. Plačice a část pozemku v k. ú. Pražské Předměstí"
         }
       },
-      "category": "Investice Kraje",
-      "guessedLatitude": 50.2167,
-      "guessedLongitude": 15.85
+      "category": "Kraj A Dotace",
+      "guessedLatitude": 50.1925324,
+      "guessedLongitude": 15.7718764
     },
     {
       "data": {
@@ -603,8 +652,8 @@
         }
       },
       "category": "Veřejná Doprava A Silnice",
-      "guessedLatitude": 50.2667,
-      "guessedLongitude": 15.6167
+      "guessedLatitude": 50.330851,
+      "guessedLongitude": 15.2702931
     },
     {
       "data": {
@@ -639,8 +688,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.4167,
-      "guessedLongitude": 16.1667
+      "guessedLatitude": 50.4167025,
+      "guessedLongitude": 16.1622871
     },
     {
       "data": {
@@ -675,8 +724,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.2053,
-      "guessedLongitude": 15.8307
+      "guessedLatitude": 50.2092113,
+      "guessedLongitude": 15.8327512
     },
     {
       "data": {
@@ -711,8 +760,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.1667,
-      "guessedLongitude": 16.1667
+      "guessedLatitude": 50.1632537,
+      "guessedLongitude": 16.2748393
     },
     {
       "data": {
@@ -747,8 +796,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.4333,
-      "guessedLongitude": 15.35
+      "guessedLatitude": 50.4370452,
+      "guessedLongitude": 15.3516528
     },
     {
       "data": {
@@ -783,8 +832,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.4167,
-      "guessedLongitude": 16.1667
+      "guessedLatitude": 50.4167025,
+      "guessedLongitude": 16.1622871
     },
     {
       "data": {
@@ -819,8 +868,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.5667,
-      "guessedLongitude": 15.9167
+      "guessedLatitude": 50.5608851,
+      "guessedLongitude": 15.9130498
     },
     {
       "data": {
@@ -855,8 +904,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.2053,
-      "guessedLongitude": 15.8307
+      "guessedLatitude": 50.2092113,
+      "guessedLongitude": 15.8327512
     },
     {
       "data": {
@@ -891,8 +940,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.4145,
-      "guessedLongitude": 16.7453
+      "guessedLatitude": 50.4167025,
+      "guessedLongitude": 16.1622871
     },
     {
       "data": {
@@ -927,8 +976,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.5935,
-      "guessedLongitude": 15.9076
+      "guessedLatitude": 50.5608851,
+      "guessedLongitude": 15.9130498
     },
     {
       "data": {
@@ -963,8 +1012,8 @@
         }
       },
       "category": "Nezařazeno",
-      "guessedLatitude": 50.2,
-      "guessedLongitude": 15.8
+      "guessedLatitude": 50.2092113,
+      "guessedLongitude": 15.8327512
     },
     {
       "data": {
@@ -1006,8 +1055,8 @@
         }
       },
       "category": "Veřejná Doprava A Silnice",
-      "guessedLatitude": 50.5935,
-      "guessedLongitude": 15.9076
+      "guessedLatitude": 50.5608851,
+      "guessedLongitude": 15.9130498
     },
     {
       "data": {
@@ -1049,8 +1098,8 @@
         }
       },
       "category": "Veřejná Doprava A Silnice",
-      "guessedLatitude": 50.5378,
-      "guessedLongitude": 15.8307
+      "guessedLatitude": 50.5328029,
+      "guessedLongitude": 15.8199431
     },
     {
       "data": {
@@ -1164,8 +1213,8 @@
         }
       },
       "category": "Veřejná Doprava A Silnice",
-      "guessedLatitude": 50.4567,
-      "guessedLongitude": 15.9431
+      "guessedLatitude": 50.505532,
+      "guessedLongitude": 16.0711662
     },
     {
       "data": {
@@ -1200,8 +1249,8 @@
         }
       },
       "category": "Životní Prostředí",
-      "guessedLatitude": 50.5935,
-      "guessedLongitude": 15.9076
+      "guessedLatitude": 50.5608851,
+      "guessedLongitude": 15.9130498
     },
     {
       "data": {
@@ -1236,8 +1285,8 @@
         }
       },
       "category": "Ekonomika A Trh Práce",
-      "guessedLatitude": 50.1744,
-      "guessedLongitude": 15.9788
+      "guessedLatitude": 50.2007842,
+      "guessedLongitude": 15.993087
     },
     {
       "data": {
@@ -1286,8 +1335,8 @@
         }
       },
       "category": "Životní Prostředí",
-      "guessedLatitude": 50.1944,
-      "guessedLongitude": 16.1528
+      "guessedLatitude": 50.3519767,
+      "guessedLongitude": 16.0827213
     },
     {
       "data": {
@@ -1321,9 +1370,9 @@
           "cs": "Záměr č. 79/2025-prodat pozemek v k. ú. Levín nad Cidlinou a obci Olešnice"
         }
       },
-      "category": "Investice Kraje",
-      "guessedLatitude": 50.2639,
-      "guessedLongitude": 15.7014
+      "category": "Nezařazeno",
+      "guessedLatitude": 50.1402816,
+      "guessedLongitude": 15.4479641
     },
     {
       "data": {
@@ -1358,8 +1407,8 @@
         }
       },
       "category": "Ekonomika A Trh Práce",
-      "guessedLatitude": 50.3564,
-      "guessedLongitude": 15.8958
+      "guessedLatitude": 50.3555139,
+      "guessedLongitude": 15.9189129
     },
     {
       "data": {
@@ -1394,8 +1443,8 @@
         }
       },
       "category": "Ekonomika A Trh Práce",
-      "guessedLatitude": 50.3564,
-      "guessedLongitude": 15.8958
+      "guessedLatitude": 50.3555139,
+      "guessedLongitude": 15.9189129
     },
     {
       "data": {
@@ -1430,8 +1479,8 @@
         }
       },
       "category": "Ekonomika A Trh Práce",
-      "guessedLatitude": 50.3564,
-      "guessedLongitude": 15.8958
+      "guessedLatitude": 50.3555139,
+      "guessedLongitude": 15.9189129
     },
     {
       "data": {
@@ -1466,8 +1515,8 @@
         }
       },
       "category": "Životní Prostředí",
-      "guessedLatitude": 50.2053,
-      "guessedLongitude": 15.8307
+      "guessedLatitude": 50.4242678,
+      "guessedLongitude": 16.1867615
     },
     {
       "data": {
@@ -1502,8 +1551,8 @@
         }
       },
       "category": "Životní Prostředí",
-      "guessedLatitude": 50.7156,
-      "guessedLongitude": 15.6153
+      "guessedLatitude": 50.7256448,
+      "guessedLongitude": 15.6067567
     },
     {
       "data": {
@@ -1538,8 +1587,8 @@
         }
       },
       "category": "Životní Prostředí",
-      "guessedLatitude": 50.3333,
-      "guessedLongitude": 15.9667
+      "guessedLatitude": 50.1379327,
+      "guessedLongitude": 15.4620743
     },
     {
       "data": {
@@ -1637,8 +1686,8 @@
         }
       },
       "category": "Veřejná Doprava A Silnice",
-      "guessedLatitude": 50.4417,
-      "guessedLongitude": 15.7083
+      "guessedLatitude": 50.4947616,
+      "guessedLongitude": 15.5149801
     },
     {
       "data": {
@@ -1673,8 +1722,8 @@
         }
       },
       "category": "Ekonomika A Trh Práce",
-      "guessedLatitude": 50.357,
-      "guessedLongitude": 15.374
+      "guessedLatitude": 50.3555139,
+      "guessedLongitude": 15.9189129
     },
     {
       "data": {
@@ -1708,9 +1757,9 @@
           "cs": "Záměr č. 78/2025-darovat pozemek v k. ú. a obci Staré Hrady, okr. Jičín"
         }
       },
-      "category": "Investice Kraje",
-      "guessedLatitude": 50.45,
-      "guessedLongitude": 15.35
+      "category": "Nezařazeno",
+      "guessedLatitude": 50.3860114,
+      "guessedLongitude": 15.2129566
     },
     {
       "data": {
@@ -1752,8 +1801,8 @@
         }
       },
       "category": "Veřejná Doprava A Silnice",
-      "guessedLatitude": 50.35,
-      "guessedLongitude": 15.7
+      "guessedLatitude": 50.3842873,
+      "guessedLongitude": 16.0168279
     },
     {
       "data": {
@@ -1788,8 +1837,8 @@
         }
       },
       "category": "Životní Prostředí",
-      "guessedLatitude": 50.18,
-      "guessedLongitude": 15.95
+      "guessedLatitude": 50.212565,
+      "guessedLongitude": 16.2633941
     },
     {
       "data": {
@@ -1838,8 +1887,8 @@
         }
       },
       "category": "Životní Prostředí",
-      "guessedLatitude": 50.3,
-      "guessedLongitude": 15.75
+      "guessedLatitude": 50.4266565,
+      "guessedLongitude": 15.87832
     },
     {
       "data": {
@@ -1881,8 +1930,8 @@
         }
       },
       "category": "Veřejná Doprava A Silnice",
-      "guessedLatitude": 50.3,
-      "guessedLongitude": 15.7
+      "guessedLatitude": 50.4671939,
+      "guessedLongitude": 15.3593276
     },
     {
       "data": {
@@ -1918,7 +1967,7 @@
       },
       "category": "Životní Prostředí",
       "guessedLatitude": 50.25,
-      "guessedLongitude": 15.85
+      "guessedLongitude": 15.917
     },
     {
       "data": {
@@ -1953,8 +2002,8 @@
         }
       },
       "category": "Ekonomika A Trh Práce",
-      "guessedLatitude": 50.357,
-      "guessedLongitude": 15.374
+      "guessedLatitude": 50.3555139,
+      "guessedLongitude": 15.9189129
     },
     {
       "data": {
@@ -2025,8 +2074,8 @@
         }
       },
       "category": "Životní Prostředí",
-      "guessedLatitude": 50.43,
-      "guessedLongitude": 15.98
+      "guessedLatitude": 50.4319898,
+      "guessedLongitude": 15.8139714
     },
     {
       "data": {
@@ -2061,8 +2110,8 @@
         }
       },
       "category": "Životní Prostředí",
-      "guessedLatitude": 50.35,
-      "guessedLongitude": 16.15
+      "guessedLatitude": 50.2676907,
+      "guessedLongitude": 16.1145157
     },
     {
       "data": {
@@ -2097,8 +2146,8 @@
         }
       },
       "category": "Životní Prostředí",
-      "guessedLatitude": 50.2,
-      "guessedLongitude": 15.7
+      "guessedLatitude": 50.3844348,
+      "guessedLongitude": 15.3700194
     },
     {
       "data": {
@@ -2147,8 +2196,8 @@
         }
       },
       "category": "Veřejná Doprava A Silnice",
-      "guessedLatitude": 50.45,
-      "guessedLongitude": 15.7
+      "guessedLatitude": 50.5066839,
+      "guessedLongitude": 15.262388
     },
     {
       "data": {
@@ -2255,8 +2304,8 @@
         }
       },
       "category": "Životní Prostředí",
-      "guessedLatitude": 50.3,
-      "guessedLongitude": 15.9
+      "guessedLatitude": 50.1779615,
+      "guessedLongitude": 16.1718433
     },
     {
       "data": {
@@ -2291,8 +2340,8 @@
         }
       },
       "category": "Životní Prostředí",
-      "guessedLatitude": 50.4,
-      "guessedLongitude": 16.05
+      "guessedLatitude": 50.4799692,
+      "guessedLongitude": 16.1820196
     },
     {
       "data": {
@@ -2327,8 +2376,8 @@
         }
       },
       "category": "Lidé A Sociální Služby",
-      "guessedLatitude": 50.2,
-      "guessedLongitude": 15.83
+      "guessedLatitude": 50.2092113,
+      "guessedLongitude": 15.8327512
     },
     {
       "data": {
@@ -2377,8 +2426,8 @@
         }
       },
       "category": "Životní Prostředí",
-      "guessedLatitude": 50.3,
-      "guessedLongitude": 15.7
+      "guessedLatitude": 50.3101932,
+      "guessedLongitude": 15.7359902
     },
     {
       "data": {
@@ -2413,8 +2462,8 @@
         }
       },
       "category": "Investice Kraje",
-      "guessedLatitude": 50.58,
-      "guessedLongitude": 15.93
+      "guessedLatitude": 50.5608851,
+      "guessedLongitude": 15.9130498
     },
     {
       "data": {
@@ -2449,8 +2498,8 @@
         }
       },
       "category": "Investice Kraje",
-      "guessedLatitude": 50.7333,
-      "guessedLongitude": 15.7333
+      "guessedLatitude": 50.6935744,
+      "guessedLongitude": 15.7335607
     },
     {
       "data": {
@@ -2505,9 +2554,9 @@
           "cs": "VV- vyrozumění o zahájení  řízení - povolení záměru:&quot;Nová JOK a komun. Pražská x V Áleji x U Studánky - SP č.3. a 4. - Nová Paka v rámci OC Nová Paka &quot; "
         }
       },
-      "category": "Nezařazeno",
-      "guessedLatitude": 50.4333,
-      "guessedLongitude": 15.4333
+      "category": "Životní prostředí",
+      "guessedLatitude": 50.4947616,
+      "guessedLongitude": 15.5149801
     },
     {
       "data": {
@@ -2542,8 +2591,8 @@
         }
       },
       "category": "Životní prostředí",
-      "guessedLatitude": 50.4333,
-      "guessedLongitude": 15.5833
+      "guessedLatitude": 50.4319898,
+      "guessedLongitude": 15.8139714
     },
     {
       "data": {
@@ -2614,8 +2663,8 @@
         }
       },
       "category": "Investice Kraje",
-      "guessedLatitude": 50.5833,
-      "guessedLongitude": 15.9167
+      "guessedLatitude": 50.5317412,
+      "guessedLongitude": 16.0283758
     },
     {
       "data": {
@@ -2686,8 +2735,8 @@
         }
       },
       "category": "Ekonomika A Trh Práce",
-      "guessedLatitude": 50.1833,
-      "guessedLongitude": 15.5833
+      "guessedLatitude": 50.2007842,
+      "guessedLongitude": 15.993087
     },
     {
       "data": {
@@ -2758,8 +2807,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.2083,
-      "guessedLongitude": 15.8333
+      "guessedLatitude": 50.2092113,
+      "guessedLongitude": 15.8327512
     },
     {
       "data": {
@@ -2794,8 +2843,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.2083,
-      "guessedLongitude": 15.8333
+      "guessedLatitude": 50.2092113,
+      "guessedLongitude": 15.8327512
     },
     {
       "data": {
@@ -2830,8 +2879,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.2083,
-      "guessedLongitude": 15.8333
+      "guessedLatitude": 50.2092113,
+      "guessedLongitude": 15.8327512
     },
     {
       "data": {
@@ -2866,8 +2915,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.2083,
-      "guessedLongitude": 15.8333
+      "guessedLatitude": 50.2092113,
+      "guessedLongitude": 15.8327512
     },
     {
       "data": {
@@ -2902,8 +2951,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.2083,
-      "guessedLongitude": 15.8333
+      "guessedLatitude": 50.2092113,
+      "guessedLongitude": 15.8327512
     },
     {
       "data": {
@@ -2974,8 +3023,8 @@
         }
       },
       "category": "Lidé A Sociální Služby",
-      "guessedLatitude": 50.2083,
-      "guessedLongitude": 15.8333
+      "guessedLatitude": 50.2092113,
+      "guessedLongitude": 15.8327512
     },
     {
       "data": {
@@ -3037,42 +3086,6 @@
           "Digitální objekt",
           "Informace na úřední desce"
         ],
-        "iri": "https://khk.cz/zdroj/úřední-deska/informace/ku-khk-vyhlasuje-vyberove-rizeni-na-obsazeni-pracovniho-mista-odborny/referent/ka-oddeleni-zdravotnictvi",
-        "url": "https://www.khk.cz/urad/uredni-deska/ku-khk-vyhlasuje-vyberove-rizeni-na-obsazeni-pracovniho-mista-odborny/referent/ka-oddeleni-zdravotnictvi",
-        "vyvěšení": {
-          "typ": "Časový okamžik",
-          "datum": "2025-09-22"
-        },
-        "relevantní_do": {
-          "typ": "Časový okamžik",
-          "datum": "2025-10-21"
-        },
-        "okruh": {
-          "cs": "Volná místa KÚ"
-        },
-        "dokument": [
-          {
-            "typ": "Digitální objekt",
-            "název": {
-              "cs": "VR_39_25_odborný_á_referent_ka zdravotnictví.pdf"
-            },
-            "url": "https://www.khk.cz/system/files/2025-09/VR_39_25_odborn%C3%BD_%C3%A1_referent_ka%20zdravotnictv%C3%AD.pdf"
-          }
-        ],
-        "název": {
-          "cs": "KÚ KHK vyhlašuje výběrové řízení na obsazení pracovního místa: odborný/á referent/ka oddělení zdravotnictví"
-        }
-      },
-      "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.2,
-      "guessedLongitude": 15.8
-    },
-    {
-      "data": {
-        "typ": [
-          "Digitální objekt",
-          "Informace na úřední desce"
-        ],
         "iri": "https://khk.cz/zdroj/úřední-deska/informace/zamer-c-73/2025-propachtovat-pozemek-v-k-u-slatina-u-hradce-kralove-obci-hradec-kralove-okr-hradec-kralove",
         "url": "https://www.khk.cz/urad/uredni-deska/zamer-c-73/2025-propachtovat-pozemek-v-k-u-slatina-u-hradce-kralove-obci-hradec-kralove-okr-hradec-kralove",
         "vyvěšení": {
@@ -3100,8 +3113,8 @@
         }
       },
       "category": "Investice Kraje",
-      "guessedLatitude": 50.2083,
-      "guessedLongitude": 15.8333
+      "guessedLatitude": 50.2092113,
+      "guessedLongitude": 15.8327512
     },
     {
       "data": {
@@ -3172,8 +3185,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.505,
-      "guessedLongitude": 15.916
+      "guessedLatitude": 50.5608851,
+      "guessedLongitude": 15.9130498
     },
     {
       "data": {
@@ -3208,8 +3221,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.437,
-      "guessedLongitude": 15.334
+      "guessedLatitude": 50.4370452,
+      "guessedLongitude": 15.3516528
     },
     {
       "data": {
@@ -3244,8 +3257,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.2,
-      "guessedLongitude": 15.8
+      "guessedLatitude": 50.5608851,
+      "guessedLongitude": 15.9130498
     },
     {
       "data": {
@@ -3280,8 +3293,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.505,
-      "guessedLongitude": 15.916
+      "guessedLatitude": 50.5608851,
+      "guessedLongitude": 15.9130498
     },
     {
       "data": {
@@ -3316,8 +3329,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.437,
-      "guessedLongitude": 15.334
+      "guessedLatitude": 50.4370452,
+      "guessedLongitude": 15.3516528
     },
     {
       "data": {
@@ -3352,8 +3365,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.471,
-      "guessedLongitude": 15.625
+      "guessedLatitude": 50.4370452,
+      "guessedLongitude": 15.3516528
     },
     {
       "data": {
@@ -3388,8 +3401,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.505,
-      "guessedLongitude": 15.916
+      "guessedLatitude": 50.5608851,
+      "guessedLongitude": 15.9130498
     },
     {
       "data": {
@@ -3424,8 +3437,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.437,
-      "guessedLongitude": 15.334
+      "guessedLatitude": 50.4370452,
+      "guessedLongitude": 15.3516528
     },
     {
       "data": {
@@ -3460,8 +3473,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.476,
-      "guessedLongitude": 16.342
+      "guessedLatitude": 50.5368703,
+      "guessedLongitude": 16.2335044
     },
     {
       "data": {
@@ -3496,8 +3509,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.459,
-      "guessedLongitude": 16.227
+      "guessedLatitude": 50.4799692,
+      "guessedLongitude": 16.1820196
     },
     {
       "data": {
@@ -3532,8 +3545,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.437,
-      "guessedLongitude": 15.334
+      "guessedLatitude": 50.4370452,
+      "guessedLongitude": 15.3516528
     },
     {
       "data": {
@@ -3568,8 +3581,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.165,
-      "guessedLongitude": 16.272
+      "guessedLatitude": 50.1632537,
+      "guessedLongitude": 16.2748393
     },
     {
       "data": {
@@ -3604,8 +3617,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.374,
-      "guessedLongitude": 15.504
+      "guessedLatitude": 50.4947616,
+      "guessedLongitude": 15.5149801
     },
     {
       "data": {
@@ -3640,8 +3653,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.135,
-      "guessedLongitude": 16.349
+      "guessedLatitude": 50.1228126,
+      "guessedLongitude": 16.2121972
     },
     {
       "data": {
@@ -3676,8 +3689,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.365,
-      "guessedLongitude": 15.642
+      "guessedLatitude": 50.3665337,
+      "guessedLongitude": 15.6321735
     },
     {
       "data": {
@@ -3712,8 +3725,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.437,
-      "guessedLongitude": 16.236
+      "guessedLatitude": 50.4319898,
+      "guessedLongitude": 15.8139714
     },
     {
       "data": {
@@ -3748,8 +3761,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.571,
-      "guessedLongitude": 16.332
+      "guessedLatitude": 50.5853016,
+      "guessedLongitude": 16.3324545
     },
     {
       "data": {
@@ -3784,8 +3797,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.523,
-      "guessedLongitude": 15.949
+      "guessedLatitude": 50.6586423,
+      "guessedLongitude": 15.9078109
     },
     {
       "data": {
@@ -3820,8 +3833,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.118,
-      "guessedLongitude": 16.359
+      "guessedLatitude": 50.1179339,
+      "guessedLongitude": 16.2903737
     },
     {
       "data": {
@@ -3856,8 +3869,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.404,
-      "guessedLongitude": 16.035
+      "guessedLatitude": 50.5125314,
+      "guessedLongitude": 16.0154279
     },
     {
       "data": {
@@ -3892,8 +3905,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.407,
-      "guessedLongitude": 15.755
+      "guessedLatitude": 50.4799692,
+      "guessedLongitude": 16.1820196
     },
     {
       "data": {
@@ -3928,8 +3941,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.158,
-      "guessedLongitude": 15.589
+      "guessedLatitude": 50.2868003,
+      "guessedLongitude": 16.0442801
     },
     {
       "data": {
@@ -3964,8 +3977,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.115,
-      "guessedLongitude": 15.975
+      "guessedLatitude": 50.1228126,
+      "guessedLongitude": 16.2121972
     },
     {
       "data": {
@@ -4000,8 +4013,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.365,
-      "guessedLongitude": 15.638
+      "guessedLatitude": 50.3665337,
+      "guessedLongitude": 15.6321735
     },
     {
       "data": {
@@ -4036,8 +4049,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.437,
-      "guessedLongitude": 15.958
+      "guessedLatitude": 50.4319898,
+      "guessedLongitude": 15.8139714
     },
     {
       "data": {
@@ -4072,8 +4085,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.571,
-      "guessedLongitude": 16.332
+      "guessedLatitude": 50.5853016,
+      "guessedLongitude": 16.3324545
     },
     {
       "data": {
@@ -4216,8 +4229,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.417,
-      "guessedLongitude": 16.155
+      "guessedLatitude": 50.4167025,
+      "guessedLongitude": 16.1622871
     },
     {
       "data": {
@@ -4252,8 +4265,8 @@
         }
       },
       "category": "Zdravotnictví A Zdraví",
-      "guessedLatitude": 50.175,
-      "guessedLongitude": 16.285
+      "guessedLatitude": 50.1632537,
+      "guessedLongitude": 16.2748393
     },
     {
       "data": {
@@ -4287,9 +4300,9 @@
           "cs": "Záměr č. 70/2025- darovat pozemky v k. ú. a obci Vysokov"
         }
       },
-      "category": "Ekonomika A Trh Práce",
-      "guessedLatitude": 50.308,
-      "guessedLongitude": 16.067
+      "category": "Nezařazeno",
+      "guessedLatitude": 50.4038391,
+      "guessedLongitude": 16.1161167
     },
     {
       "data": {
@@ -4323,9 +4336,9 @@
           "cs": "Záměr č. 71/2025 prodat pozemek v k. ú. a obci Žďárky, okr. Náchod"
         }
       },
-      "category": "Ekonomika A Trh Práce",
-      "guessedLatitude": 50.508,
-      "guessedLongitude": 16.358
+      "category": "Nezařazeno",
+      "guessedLatitude": 50.4682252,
+      "guessedLongitude": 16.2273375
     },
     {
       "data": {
@@ -4494,8 +4507,8 @@
         }
       },
       "category": "Veřejná Doprava A Silnice",
-      "guessedLatitude": 50.35,
-      "guessedLongitude": 16.05
+      "guessedLatitude": 50.362248,
+      "guessedLongitude": 15.8713934
     },
     {
       "data": {
@@ -4529,9 +4542,9 @@
           "cs": "Záměr č. 67/2025 - darovat pozemek v k. ú. Studnice u Náchoda"
         }
       },
-      "category": "Ekonomika A Trh Práce",
-      "guessedLatitude": 50.417,
-      "guessedLongitude": 16.155
+      "category": "Nezařazeno",
+      "guessedLatitude": 50.4212704,
+      "guessedLongitude": 16.0898728
     },
     {
       "data": {
@@ -4565,9 +4578,9 @@
           "cs": "Záměr č. 69/2025 - darovat pozemky v k. ú. Meziměstí a v k. ú. Ruprechtice u Broumova"
         }
       },
-      "category": "Ekonomika A Trh Práce",
-      "guessedLatitude": 50.55,
-      "guessedLongitude": 16.25
+      "category": "Nezařazeno",
+      "guessedLatitude": 50.6257349,
+      "guessedLongitude": 16.2395252
     },
     {
       "data": {
@@ -4601,9 +4614,9 @@
           "cs": "Záměr č. 64/2025 - prodat pozemek v obci Broumov"
         }
       },
-      "category": "Ekonomika A Trh Práce",
-      "guessedLatitude": 50.571,
-      "guessedLongitude": 16.332
+      "category": "Nezařazeno",
+      "guessedLatitude": 50.5853016,
+      "guessedLongitude": 16.3324545
     },
     {
       "data": {
@@ -4637,9 +4650,9 @@
           "cs": "Záměr č. 63/2025-prodat soubor nemovitostí v k. ú. a obci Náchod"
         }
       },
-      "category": "Ekonomika A Trh Práce",
-      "guessedLatitude": 50.417,
-      "guessedLongitude": 16.155
+      "category": "Nezařazeno",
+      "guessedLatitude": 50.4167025,
+      "guessedLongitude": 16.1622871
     },
     {
       "data": {
@@ -4673,9 +4686,9 @@
           "cs": "Záměr č. 51/2025 prodat pozemky v k. ú. a obci Týniště nad Orlicí"
         }
       },
-      "category": "Ekonomika A Trh Práce",
-      "guessedLatitude": 50.15,
-      "guessedLongitude": 16.05
+      "category": "Nezařazeno",
+      "guessedLatitude": 50.1513634,
+      "guessedLongitude": 16.0776973
     },
     {
       "data": {
@@ -4746,8 +4759,8 @@
         }
       },
       "category": "Investice Kraje",
-      "guessedLatitude": 50.23,
-      "guessedLongitude": 15.85
+      "guessedLatitude": 50.2092113,
+      "guessedLongitude": 15.8327512
     },
     {
       "data": {
@@ -4782,8 +4795,8 @@
         }
       },
       "category": "Investice Kraje",
-      "guessedLatitude": 50.42,
-      "guessedLongitude": 15.52
+      "guessedLatitude": 50.4370452,
+      "guessedLongitude": 15.3516528
     },
     {
       "data": {
@@ -4818,8 +4831,8 @@
         }
       },
       "category": "Investice Kraje",
-      "guessedLatitude": 50.42,
-      "guessedLongitude": 15.52
+      "guessedLatitude": 50.4370452,
+      "guessedLongitude": 15.3516528
     },
     {
       "data": {
@@ -4854,8 +4867,8 @@
         }
       },
       "category": "Investice Kraje",
-      "guessedLatitude": 50.21,
-      "guessedLongitude": 15.83
+      "guessedLatitude": 50.2092113,
+      "guessedLongitude": 15.8327512
     },
     {
       "data": {
@@ -4897,8 +4910,8 @@
         }
       },
       "category": "Veřejná Doprava A Silnice",
-      "guessedLatitude": 50.18,
-      "guessedLongitude": 16.35
+      "guessedLatitude": 50.108729,
+      "guessedLongitude": 16.3657913
     },
     {
       "data": {
@@ -4933,8 +4946,8 @@
         }
       },
       "category": "Investice Kraje",
-      "guessedLatitude": 50.35,
-      "guessedLongitude": 15.67
+      "guessedLatitude": 50.4290274,
+      "guessedLongitude": 15.5827632
     },
     {
       "data": {
@@ -5041,8 +5054,8 @@
         }
       },
       "category": "Investice Kraje",
-      "guessedLatitude": 50.32,
-      "guessedLongitude": 15.73
+      "guessedLatitude": 50.2686182,
+      "guessedLongitude": 15.4990649
     },
     {
       "data": {
@@ -5077,8 +5090,8 @@
         }
       },
       "category": "Nezařazeno",
-      "guessedLatitude": 50.2,
-      "guessedLongitude": 15.8
+      "guessedLatitude": 50.5605504,
+      "guessedLongitude": 15.8926631
     },
     {
       "data": {
@@ -5185,8 +5198,8 @@
         }
       },
       "category": "Investice Kraje",
-      "guessedLatitude": 50.41,
-      "guessedLongitude": 16.14
+      "guessedLatitude": 50.4799692,
+      "guessedLongitude": 16.1820196
     },
     {
       "data": {
@@ -5221,8 +5234,8 @@
         }
       },
       "category": "Životní Prostředí",
-      "guessedLatitude": 50.26,
-      "guessedLongitude": 15.92
+      "guessedLatitude": 50.2722482,
+      "guessedLongitude": 15.81955
     },
     {
       "data": {
@@ -5257,8 +5270,8 @@
         }
       },
       "category": "Životní Prostředí",
-      "guessedLatitude": 50.26,
-      "guessedLongitude": 15.92
+      "guessedLatitude": 50.2563276,
+      "guessedLongitude": 15.8155632
     },
     {
       "data": {
@@ -5293,8 +5306,8 @@
         }
       },
       "category": "Životní Prostředí",
-      "guessedLatitude": 50.35,
-      "guessedLongitude": 15.67
+      "guessedLatitude": 50.4075203,
+      "guessedLongitude": 15.676766
     },
     {
       "data": {
@@ -5356,8 +5369,8 @@
         }
       },
       "category": "Investice Kraje",
-      "guessedLatitude": 50.35,
-      "guessedLongitude": 15.67
+      "guessedLatitude": 50.4290274,
+      "guessedLongitude": 15.5827632
     },
     {
       "data": {
@@ -5399,8 +5412,8 @@
         }
       },
       "category": "Investice Kraje",
-      "guessedLatitude": 50.18,
-      "guessedLongitude": 16.07
+      "guessedLatitude": 50.2030082,
+      "guessedLongitude": 16.2383273
     },
     {
       "data": {
@@ -5434,7 +5447,7 @@
           "cs": "Záměr č.10/2025 -darovat v budoucnu vzniknuvší část vodovodu ve vlastnictví Královéhradeckého kraje"
         }
       },
-      "category": "Kraj A Dotace",
+      "category": "Nezařazeno",
       "guessedLatitude": 50.2,
       "guessedLongitude": 15.8
     },
@@ -5470,9 +5483,9 @@
           "cs": "Záměr č. 4/2025 prodat nemovité věci v k. ú. a obci Lázně Bělohrad"
         }
       },
-      "category": "Kraj A Dotace",
-      "guessedLatitude": 50.365,
-      "guessedLongitude": 15.875
+      "category": "Nezařazeno",
+      "guessedLatitude": 50.4290274,
+      "guessedLongitude": 15.5827632
     },
     {
       "data": {
@@ -5506,7 +5519,7 @@
           "cs": "Výsledky výběrového řízení ze dne 15.01.2025"
         }
       },
-      "category": "Ekonomika A Trh Práce",
+      "category": "Nezařazeno",
       "guessedLatitude": 50.2,
       "guessedLongitude": 15.8
     },
@@ -5542,7 +5555,7 @@
           "cs": "Záměr č. 122/2024 - V budoucnu darovat části pozemků ve vlastnictví Královéhradeckého kraje "
         }
       },
-      "category": "Kraj A Dotace",
+      "category": "Nezařazeno",
       "guessedLatitude": 50.2,
       "guessedLongitude": 15.8
     },
@@ -5650,9 +5663,9 @@
           "cs": "Záměr č. 117/2024 prodat nemovité věci v k. ú. a obci Nový Bydžov"
         }
       },
-      "category": "Kraj A Dotace",
-      "guessedLatitude": 50.333,
-      "guessedLongitude": 15.533
+      "category": "Nezařazeno",
+      "guessedLatitude": 50.2417701,
+      "guessedLongitude": 15.4907692
     },
     {
       "data": {
@@ -5686,7 +5699,7 @@
           "cs": "Výsledky výběrového řízení ze dne 04.12.2024"
         }
       },
-      "category": "Ekonomika A Trh Práce",
+      "category": "Nezařazeno",
       "guessedLatitude": 50.2,
       "guessedLongitude": 15.8
     },
@@ -5722,7 +5735,7 @@
           "cs": "Výsledky výběrového řízení ze dne 06.11.2024"
         }
       },
-      "category": "Ekonomika A Trh Práce",
+      "category": "Nezařazeno",
       "guessedLatitude": 50.2,
       "guessedLongitude": 15.8
     },
@@ -5765,9 +5778,9 @@
           "cs": "Záměr č. 112/2024 - v budoucnu darovat městu Náchod stavbu sjezdu( včetně navazující veřejně přístupné komunikace) "
         }
       },
-      "category": "Kraj A Dotace",
-      "guessedLatitude": 50.423,
-      "guessedLongitude": 16.155
+      "category": "Nezařazeno",
+      "guessedLatitude": 50.4167025,
+      "guessedLongitude": 16.1622871
     },
     {
       "data": {
@@ -5801,7 +5814,7 @@
           "cs": "Záměr č. 110/2024 - zcizit část pozemku ve vlastnictví Královéhradeckého kraje"
         }
       },
-      "category": "Kraj A Dotace",
+      "category": "Nezařazeno",
       "guessedLatitude": 50.2,
       "guessedLongitude": 15.8
     },
@@ -5868,8 +5881,8 @@
         }
       },
       "category": "Nezařazeno",
-      "guessedLatitude": 50.37,
-      "guessedLongitude": 16.05
+      "guessedLatitude": 50.4799692,
+      "guessedLongitude": 16.1820196
     },
     {
       "data": {
@@ -5903,9 +5916,9 @@
           "cs": "Záměr č. 98/2024 - pronajmout soubor nemovitostí v k. ú. Opočno pod Orlickými horami a v obci Opočno"
         }
       },
-      "category": "Kraj A Dotace",
-      "guessedLatitude": 50.105,
-      "guessedLongitude": 16.433
+      "category": "Nezařazeno",
+      "guessedLatitude": 50.2676907,
+      "guessedLongitude": 16.1145157
     },
     {
       "data": {
@@ -5975,7 +5988,7 @@
           "cs": "Záměr č.65/2024 - pronajmout nebytové prostory v budově č. p. 1282"
         }
       },
-      "category": "Kraj A Dotace",
+      "category": "Nezařazeno",
       "guessedLatitude": 50.2,
       "guessedLongitude": 15.8
     },
@@ -6009,8 +6022,8 @@
         }
       },
       "category": "Nezařazeno",
-      "guessedLatitude": 50.15,
-      "guessedLongitude": 15.95
+      "guessedLatitude": 50.1865901,
+      "guessedLongitude": 16.2069574
     },
     {
       "data": {
@@ -6044,9 +6057,9 @@
           "cs": "Záměr č. 39/2024 - prodej nemovitých věcí v obci Solnice, v k. ú. Solnice"
         }
       },
-      "category": "Kraj A Dotace",
-      "guessedLatitude": 50.15,
-      "guessedLongitude": 16.317
+      "category": "Nezařazeno",
+      "guessedLatitude": 50.2030082,
+      "guessedLongitude": 16.2383273
     },
     {
       "data": {
@@ -6111,8 +6124,8 @@
         }
       },
       "category": "Nezařazeno",
-      "guessedLatitude": 50.15,
-      "guessedLongitude": 16.317
+      "guessedLatitude": 50.1632537,
+      "guessedLongitude": 16.2748393
     },
     {
       "data": {
@@ -6255,8 +6268,8 @@
         }
       },
       "category": "Investice Kraje",
-      "guessedLatitude": 50.35,
-      "guessedLongitude": 15.75
+      "guessedLatitude": 50.2686182,
+      "guessedLongitude": 15.4990649
     },
     {
       "data": {
@@ -6327,8 +6340,8 @@
         }
       },
       "category": "Veřejná Doprava A Silnice",
-      "guessedLatitude": 50.4,
-      "guessedLongitude": 16.1
+      "guessedLatitude": 50.4617723,
+      "guessedLongitude": 16.1893082
     },
     {
       "data": {
@@ -6363,8 +6376,8 @@
         }
       },
       "category": "Veřejná Doprava A Silnice",
-      "guessedLatitude": 50.55,
-      "guessedLongitude": 16.35
+      "guessedLatitude": 50.5853016,
+      "guessedLongitude": 16.3324545
     },
     {
       "data": {
@@ -6399,8 +6412,8 @@
         }
       },
       "category": "Veřejná Doprava A Silnice",
-      "guessedLatitude": 50.55,
-      "guessedLongitude": 16.35
+      "guessedLatitude": 50.5853016,
+      "guessedLongitude": 16.3324545
     },
     {
       "data": {
@@ -6435,8 +6448,8 @@
         }
       },
       "category": "Veřejná Doprava A Silnice",
-      "guessedLatitude": 50.35,
-      "guessedLongitude": 15.95
+      "guessedLatitude": 50.3555139,
+      "guessedLongitude": 15.9189129
     },
     {
       "data": {
@@ -6471,8 +6484,8 @@
         }
       },
       "category": "Investice Kraje",
-      "guessedLatitude": 50.73,
-      "guessedLongitude": 15.75
+      "guessedLatitude": 50.6935744,
+      "guessedLongitude": 15.7335607
     },
     {
       "data": {
@@ -6612,8 +6625,8 @@
         }
       },
       "category": "Investice Kraje",
-      "guessedLatitude": 50.4,
-      "guessedLongitude": 16.1
+      "guessedLatitude": 50.4799692,
+      "guessedLongitude": 16.1820196
     },
     {
       "data": {
@@ -6648,8 +6661,8 @@
         }
       },
       "category": "Veřejná Doprava A Silnice",
-      "guessedLatitude": 50.35,
-      "guessedLongitude": 16.05
+      "guessedLatitude": 50.4844558,
+      "guessedLongitude": 15.9760374
     },
     {
       "data": {
@@ -6908,7 +6921,7 @@
           "cs": "Informace o zřízení Národního registru osob nesouhlasících s posmrtným odběrem tkání a orgánů"
         }
       },
-      "category": "Nezařazeno",
+      "category": "Lidé A Sociální Služby",
       "guessedLatitude": 50.2,
       "guessedLongitude": 15.8
     },
@@ -6981,8 +6994,8 @@
         }
       },
       "category": "Nezařazeno",
-      "guessedLatitude": 50.425,
-      "guessedLongitude": 15.355
+      "guessedLatitude": 50.4370452,
+      "guessedLongitude": 15.3516528
     }
   ]
 }

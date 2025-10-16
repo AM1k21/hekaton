@@ -28,29 +28,30 @@ interface ReverseGeocodingResult {
  */
 export async function geocodePlace(placeName: string): Promise<string | null> {
 	try {
-		const response = await fetch(
-			`${NOMINATIM_BASE_URL}/search?q=${encodeURIComponent(placeName)}&format=json&limit=1`,
-			{
-				headers: {
-					'User-Agent': 'HeatonApp/1.0' // Required by Nominatim
-				}
-			}
-		);
+		const response = await fetch('/api/geocode', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				type: 'forward',
+				placeName
+			})
+		});
 
 		if (!response.ok) {
-			console.error('Geocoding failed:', response.statusText);
+			console.error('Geocoding failed:', response.status);
 			return null;
 		}
 
-		const data: GeocodingResult[] = await response.json();
+		const data = await response.json();
 
-		if (data.length === 0) {
-			console.error('No results found for:', placeName);
+		if (data.error) {
+			console.error('Geocoding error:', data.error);
 			return null;
 		}
 
-		const result = data[0];
-		return `${parseFloat(result.lat).toFixed(6)}, ${parseFloat(result.lon).toFixed(6)}`;
+		return data.coordinates;
 	} catch (error) {
 		console.error('Error geocoding place:', error);
 		return null;
@@ -77,33 +78,30 @@ export async function reverseGeocode(coordinates: string): Promise<string> {
 			return coordinates;
 		}
 
-		const response = await fetch(
-			`${NOMINATIM_BASE_URL}/reverse?lat=${lat}&lon=${lon}&format=json&zoom=10`,
-			{
-				headers: {
-					'User-Agent': 'HeatonApp/1.0'
-				}
-			}
-		);
+		const response = await fetch('/api/geocode', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				type: 'reverse',
+				coordinates
+			})
+		});
 
 		if (!response.ok) {
-			console.error('Reverse geocoding failed:', response.statusText);
+			console.error('Reverse geocoding failed:', response.status);
 			return coordinates;
 		}
 
-		const data: ReverseGeocodingResult = await response.json();
+		const data = await response.json();
 
-		// Try to get the most relevant place name
-		const address = data.address;
-		const placeName = 
-			address.city || 
-			address.town || 
-			address.village || 
-			address.municipality || 
-			address.county ||
-			address.state;
+		if (data.error) {
+			console.error('Reverse geocoding error:', data.error);
+			return coordinates;
+		}
 
-		return placeName || data.display_name || coordinates;
+		return data.placeName || coordinates;
 	} catch (error) {
 		console.error('Error reverse geocoding:', error);
 		return coordinates;

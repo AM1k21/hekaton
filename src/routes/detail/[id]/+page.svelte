@@ -1,15 +1,41 @@
 <script lang="ts">
 	import Header from '$lib/components/Header.svelte';
 	import { onMount } from 'svelte';
+	import maplibregl from 'maplibre-gl';
 
 	let { data } = $props();
+
+	let mapContainer: HTMLDivElement;
+	let map: maplibregl.Map | null = null;
 
 	let summaryState: 'loading' | 'loaded' | 'error' = $state('loading');
 	let summary: string = $state('');
 	let summaryError: string = $state('');
 
-	onMount(async () => {
-		if (data.item) {
+	onMount(() => {
+		// Initialize map if coordinates are available
+		if (data.item?.guessedLatitude && data.item?.guessedLongitude && mapContainer) {
+			map = new maplibregl.Map({
+				container: mapContainer,
+				style: 'https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json',
+				center: [data.item.guessedLongitude, data.item.guessedLatitude],
+				zoom: 13
+			});
+
+			// Add marker
+			new maplibregl.Marker({
+				color: '#0a2f83'
+			})
+				.setLngLat([data.item.guessedLongitude, data.item.guessedLatitude])
+				.addTo(map);
+
+			// Add navigation controls
+			map.addControl(new maplibregl.NavigationControl(), 'top-right');
+		}
+
+		// Load AI summary
+		(async () => {
+			if (data.item) {
 			try {
 				const response = await fetch('/api/v1/gemini/summary', {
 					method: 'POST',
@@ -35,10 +61,19 @@
 				summaryError = 'AI shrnutí je momentálně nedostupné. Zkuste to prosím později.';
 				summaryState = 'error';
 			}
-		} else {
-			summaryError = 'Nenalezena data pro vytvoření shrnutí';
-			summaryState = 'error';
-		}
+			} else {
+				summaryError = 'Nenalezena data pro vytvoření shrnutí';
+				summaryState = 'error';
+			}
+		})();
+
+		// Cleanup map on unmount
+		return () => {
+			if (map) {
+				map.remove();
+				map = null;
+			}
+		};
 	});
 
 	function formatDate(dateString: string | null) {
@@ -139,7 +174,7 @@
 								<circle cx="12" cy="12" r="10"></circle>
 								<path d="m15 9-6 6m0-6 6 6"></path>
 							</svg>
-							Vypršelo
+							Neaktuální
 						</span>
 					{:else if daysUntilExpiry(data.item.relevantniDo) !== null && daysUntilExpiry(data.item.relevantniDo)! <= 7}
 						<span class="status-badge warning-badge">
@@ -159,7 +194,7 @@
 								></path>
 								<path d="M12 9v4m0 4h.01"></path>
 							</svg>
-							Vyprší za {daysUntilExpiry(data.item.relevantniDo)} {daysUntilExpiry(
+							Bude neaktuální za {daysUntilExpiry(data.item.relevantniDo)} {daysUntilExpiry(
 								data.item.relevantniDo
 							) === 1
 								? 'den'
@@ -307,6 +342,30 @@
 						</div>
 					{/if}
 				</div>
+
+				<!-- Map Section -->
+				{#if data.item.guessedLatitude && data.item.guessedLongitude}
+					<div class="map-section">
+						<div class="map-header">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							>
+								<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+								<circle cx="12" cy="10" r="3"></circle>
+							</svg>
+							<h3>Umístění</h3>
+						</div>
+						<div class="map-container" bind:this={mapContainer}></div>
+					</div>
+				{/if}
 
 				<!-- Action button -->
 				<div class="actions">
@@ -899,6 +958,32 @@
 		transform: translateX(4px);
 	}
 
+	.map-section {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.map-header {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		color: var(--color-brand-main);
+	}
+
+	.map-header h3 {
+		font-size: 1.125rem;
+		font-weight: 600;
+		margin: 0;
+	}
+
+	.map-container {
+		width: 100%;
+		height: 400px;
+		border: 1px solid var(--color-border);
+		background-color: var(--color-hover);
+	}
+
 	@media (max-width: 768px) {
 		.back-button-inline span {
 			display: none;
@@ -956,6 +1041,10 @@
 		.document-arrow svg {
 			width: 18px;
 			height: 18px;
+		}
+
+		.map-container {
+			height: 300px;
 		}
 	}
 </style>

@@ -1,14 +1,23 @@
 {
   "name": "MojeKHK",
+  "short_name": "KHK",
   "description": "Aplikace pro personalizovaný přístup k úředním deskám Královéhradeckého kraje",
   "display": "standalone",
   "start_url": "/",
+  "background_color": "#ffffff",
+  "theme_color": "#0a2f83",
   "icons": [
     {
-      "src": "favicon-144x144.png",
+      "src": "/favicon-144x144.png",
       "sizes": "144x144",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any"
     }
   ]
 }

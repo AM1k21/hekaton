@@ -21,12 +21,14 @@
 	let notifications = $state(false);
 	let emailNotifications = $state(false);
 	let showNotificationParams = $state(false);
-	let notificationPreferences = $state<Array<{ zajmy: string[]; lokace: string; radius: number }>>([]);
+	let notificationPreferences = $state<Array<{ zajmy: string[]; lokace: string; radius: number; displayName?: string }>>([]);
 	let newZajmy = $state<string[]>([]);
 	let newLokace = $state('');
 	let newRadius = $state(10);
 	let isLoadingGeolocation = $state(false);
 	let locationDisplayNames = $state<Map<string, string>>(new Map());
+	let isTestingNotifications = $state(false);
+	let editingIndex = $state<number | null>(null);
 
 	onMount(async () => {
 		const storedUser = localStorage.getItem('user');
@@ -49,7 +51,7 @@
 					emailNotifications = settings.emailNotifications;
 					notificationPreferences = settings.notificationPreferences;
 					
-					// Load display names for all locations
+					// Load display names for locations that don't have them saved
 					await loadLocationDisplayNames();
 				}
 			} catch (err) {
@@ -63,17 +65,31 @@
 
 	async function loadLocationDisplayNames() {
 		const newMap = new Map<string, string>();
+		let needsUpdate = false;
 		
 		for (const pref of notificationPreferences) {
-			if (isCoordinateFormat(pref.lokace)) {
+			if (pref.displayName) {
+				// Use saved display name
+				newMap.set(pref.lokace, pref.displayName);
+			} else if (isCoordinateFormat(pref.lokace)) {
+				// Fetch display name for coordinates without saved name
 				const displayName = await reverseGeocode(pref.lokace);
 				newMap.set(pref.lokace, displayName);
+				pref.displayName = displayName;
+				needsUpdate = true;
 			} else {
 				newMap.set(pref.lokace, pref.lokace);
+				pref.displayName = pref.lokace;
+				needsUpdate = true;
 			}
 		}
 		
 		locationDisplayNames = newMap;
+		
+		// Save updated preferences with display names
+		if (needsUpdate) {
+			await saveSettings();
+		}
 	}
 
 	async function handleLogout() {
@@ -248,6 +264,7 @@
 		}
 
 		let locationToSave = newLokace.trim();
+		let displayNameToSave = locationToSave;
 
 		// If the location is not in coordinate format, geocode it
 		if (!isCoordinateFormat(locationToSave)) {
@@ -263,31 +280,68 @@
 				return;
 			}
 			
+			displayNameToSave = locationToSave; // Keep original location name
 			locationToSave = coordinates;
 			successMessage = '';
+		} else {
+			// If coordinates, get display name
+			displayNameToSave = await reverseGeocode(locationToSave);
 		}
 
-		notificationPreferences = [
-			...notificationPreferences,
-			{
-				zajmy: newZajmy,
-				lokace: locationToSave,
-				radius: newRadius
-			}
-		];
+		const newPreference = {
+			zajmy: newZajmy,
+			lokace: locationToSave,
+			radius: newRadius,
+			displayName: displayNameToSave
+		};
 
-		// Update display name for the new location
-		if (isCoordinateFormat(locationToSave)) {
-			const displayName = await reverseGeocode(locationToSave);
-			locationDisplayNames.set(locationToSave, displayName);
-			locationDisplayNames = new Map(locationDisplayNames); // Trigger reactivity
+		if (editingIndex !== null) {
+			// Update existing preference
+			notificationPreferences = notificationPreferences.map((pref, i) => 
+				i === editingIndex ? newPreference : pref
+			);
+			editingIndex = null;
+		} else {
+			// Add new preference
+			notificationPreferences = [
+				...notificationPreferences,
+				newPreference
+			];
 		}
+
+		// Update display name in the map
+		locationDisplayNames.set(locationToSave, displayNameToSave);
+		locationDisplayNames = new Map(locationDisplayNames); // Trigger reactivity
 
 		newZajmy = [];
 		newLokace = '';
 		newRadius = 10;
 		
 		await saveSettings();
+	}
+
+	function handleEditNotificationPreference(index: number) {
+		const pref = notificationPreferences[index];
+		editingIndex = index;
+		newZajmy = [...pref.zajmy];
+		newLokace = pref.displayName || locationDisplayNames.get(pref.lokace) || pref.lokace;
+		newRadius = pref.radius;
+		showNotificationParams = true;
+		
+		// Scroll to form
+		setTimeout(() => {
+			const form = document.querySelector('.params-form');
+			if (form) {
+				form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+			}
+		}, 100);
+	}
+
+	function handleCancelEdit() {
+		editingIndex = null;
+		newZajmy = [];
+		newLokace = '';
+		newRadius = 10;
 	}
 
 	async function handleRemoveNotificationPreference(index: number) {
@@ -331,6 +385,220 @@
 			history.back();
 		} else {
 			window.location.href = '/';
+		}
+	}
+
+	// Calculate distance between two coordinates using Haversine formula
+	function calculateDistance(lat1: number, lon1: number, lat2: number, lon2: number): number {
+		const R = 6371; // Earth's radius in kilometers
+		const dLat = (lat2 - lat1) * Math.PI / 180;
+		const dLon = (lon2 - lon1) * Math.PI / 180;
+		const a = 
+			Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+			Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+			Math.sin(dLon / 2) * Math.sin(dLon / 2);
+		const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+		return R * c;
+	}
+
+	async function requestNotificationPermission() {
+		if (!('Notification' in window)) {
+			errorMessage = 'Tento prohlížeč nepodporuje notifikace';
+			setTimeout(() => {
+				errorMessage = '';
+			}, 3000);
+			return false;
+		}
+
+		if (Notification.permission === 'granted') {
+			return true;
+		}
+
+		if (Notification.permission !== 'denied') {
+			const permission = await Notification.requestPermission();
+			return permission === 'granted';
+		}
+
+		errorMessage = 'Notifikace jsou zablokované. Klikněte na ikonu zámku v adresním řádku a povolte notifikace pro tuto stránku.';
+		setTimeout(() => {
+			errorMessage = '';
+		}, 5000);
+		return false;
+	}
+
+	function showNotification(title: string, body: string, url: string) {
+		if (Notification.permission === 'granted') {
+			const notificationOptions: any = {
+				body,
+				icon: '/favicon-144x144.png',
+				badge: '/favicon-144x144.png',
+				tag: 'uredni-deska',
+				requireInteraction: false
+			};
+
+			// Add vibrate if supported
+			if ('vibrate' in navigator) {
+				notificationOptions.vibrate = [200, 100, 200];
+			}
+
+			const notification = new Notification(title, notificationOptions);
+
+			notification.onclick = () => {
+				window.open(url, '_blank');
+				notification.close();
+			};
+		}
+	}
+
+	async function testNotifications() {
+		isTestingNotifications = true;
+		errorMessage = '';
+
+		try {
+			// Request notification permission first (only for browser notifications)
+			if (notifications) {
+				const hasPermission = await requestNotificationPermission();
+				if (!hasPermission && !emailNotifications) {
+					isTestingNotifications = false;
+					return;
+				}
+			}
+
+			// Fetch all messages
+			const response = await fetch('/api/oznaceni');
+			if (!response.ok) {
+				throw new Error('Failed to fetch messages');
+			}
+
+			const data = await response.json();
+			const allMessages = data.items;
+
+			// Today's date in YYYY-MM-DD format
+			const today = new Date().toISOString().split('T')[0];
+
+			// Filter messages from today
+			const todaysMessages = allMessages.filter((msg: any) => {
+				return msg.vyveseni === today;
+			});
+
+			console.log(`Total messages: ${allMessages.length}, Today's messages: ${todaysMessages.length}`);
+
+			// Filter by user's notification preferences
+			let matchedMessages: any[] = [];
+
+			for (const pref of notificationPreferences) {
+				// Parse user's location coordinates
+				const userCoords = pref.lokace.split(',').map((c: string) => parseFloat(c.trim()));
+				const userLat = userCoords[0];
+				const userLon = userCoords[1];
+
+				// Filter by category and location
+				const preferencesMatches = todaysMessages.filter((msg: any) => {
+					// Check if message category matches any of user's interests
+					const categoryMatch = pref.zajmy.includes(msg.category);
+					if (!categoryMatch) return false;
+
+					// Check if message has location data
+					if (!msg.guessedLatitude || !msg.guessedLongitude) {
+						console.log(`Message "${msg.nazev}" has no location data`);
+						return false;
+					}
+
+					// Calculate distance
+					const distance = calculateDistance(
+						userLat,
+						userLon,
+						msg.guessedLatitude,
+						msg.guessedLongitude
+					);
+
+					console.log(`Message: "${msg.nazev}", Category: ${msg.category}, Distance: ${distance.toFixed(2)} km, Radius: ${pref.radius} km`);
+
+					// Check if within radius
+					return distance <= pref.radius;
+				});
+
+				matchedMessages = [...matchedMessages, ...preferencesMatches];
+			}
+
+			// Remove duplicates
+			const uniqueMessages = matchedMessages.filter((msg, index, self) =>
+				index === self.findIndex((m) => m.iri === m.iri)
+			);
+
+			if (uniqueMessages.length === 0) {
+				successMessage = 'Žádné zprávy nevyhovují vašim parametrům';
+				setTimeout(() => {
+					successMessage = '';
+				}, 3000);
+			} else {
+				// Show browser notifications if enabled
+				if (notifications && Notification.permission === 'granted') {
+					uniqueMessages.forEach((msg, index) => {
+						setTimeout(() => {
+							showNotification(
+								msg.nazev,
+								`Kategorie: ${msg.category}\nVyvěšeno: ${msg.vyveseni}`,
+								msg.url
+							);
+						}, index * 500); // Stagger notifications by 500ms
+					});
+				}
+
+				// Send email notifications if enabled
+				if (emailNotifications && user?.email) {
+					try {
+						const emailResponse = await fetch('/api/v1/notifications/send-email', {
+							method: 'POST',
+							headers: {
+								'Content-Type': 'application/json'
+							},
+							body: JSON.stringify({
+								email: user.email,
+								messages: uniqueMessages.map(msg => ({
+									nazev: msg.nazev,
+									category: msg.category,
+									vyveseni: msg.vyveseni,
+									url: msg.url,
+									location: msg.adresa || ''
+								}))
+							})
+						});
+
+						if (!emailResponse.ok) {
+							console.error('Failed to send email notifications');
+						}
+					} catch (emailErr) {
+						console.error('Error sending email notifications:', emailErr);
+					}
+				}
+
+				const notificationTypes: string[] = [];
+				if (notifications && Notification.permission === 'granted') {
+					notificationTypes.push('prohlížeče');
+				}
+				if (emailNotifications) {
+					notificationTypes.push('emailu');
+				}
+
+				const typeText = notificationTypes.length > 0 
+					? ` (${notificationTypes.join(' a ')})` 
+					: '';
+
+				successMessage = `Odesláno ${uniqueMessages.length} oznámení${typeText}`;
+				setTimeout(() => {
+					successMessage = '';
+				}, 3000);
+			}
+
+		} catch (err) {
+			console.error('Error testing notifications:', err);
+			errorMessage = 'Chyba při testování oznámení';
+			setTimeout(() => {
+				errorMessage = '';
+			}, 3000);
+		} finally {
+			isTestingNotifications = false;
 		}
 	}
 </script>
@@ -547,7 +815,11 @@
 
 					<!-- Notification Parameters Section -->
 					<div class="notification-params-section">
-						<button onclick={() => (showNotificationParams = !showNotificationParams)} class="action-button">
+						<button 
+							onclick={() => (showNotificationParams = !showNotificationParams)} 
+							class="action-button"
+							disabled={editingIndex !== null && showNotificationParams}
+						>
 							{#if showNotificationParams}
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -579,6 +851,39 @@
 
 						{#if showNotificationParams}
 							<form onsubmit={(e) => { e.preventDefault(); handleAddNotificationPreference(); }} class="params-form">
+								{#if editingIndex !== null}
+									<div class="editing-banner">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="18"
+											height="18"
+											viewBox="0 0 24 24"
+											fill="none"
+											stroke="currentColor"
+											stroke-width="2"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M12 20h9"></path>
+											<path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+										</svg>
+										<span>Upravujete parametr #{editingIndex + 1}</span>
+										<button type="button" onclick={handleCancelEdit} class="cancel-edit-button">
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												width="14"
+												height="14"
+												viewBox="0 0 24 24"
+												fill="none"
+												stroke="currentColor"
+												stroke-width="2"
+											>
+												<line x1="18" y1="6" x2="6" y2="18"></line>
+												<line x1="6" y1="6" x2="18" y2="18"></line>
+											</svg>
+										</button>
+									</div>
+								{/if}
 								<div class="form-group">
 									<label for="zajmy">Kategorie</label>
 									<div class="custom-select-wrapper">
@@ -699,7 +1004,7 @@
 								</div>
 
 								<div class="form-group">
-									<label for="radius">Vzdálenost (okruh v km)</label>
+									<label for="radius">okruh</label>
 									<div class="radius-input-wrapper">
 										<input
 											id="radius"
@@ -722,9 +1027,16 @@
 									</div>
 								</div>
 
-								<button type="submit" class="submit-button">
-									Přidat parametr
-								</button>
+								<div class="form-buttons">
+									<button type="submit" class="submit-button">
+										{editingIndex !== null ? 'Uložit změny' : 'Přidat parametr'}
+									</button>
+									{#if editingIndex !== null}
+										<button type="button" onclick={handleCancelEdit} class="cancel-button">
+											Zrušit
+										</button>
+									{/if}
+								</div>
 							</form>
 						{/if}
 
@@ -736,15 +1048,65 @@
 									<div class="preference-item">
 										<div class="preference-content">
 											<p class="preference-label"><strong>Zájmy:</strong> {pref.zajmy.join(', ')}</p>
-											<p class="preference-label"><strong>Lokace:</strong> {locationDisplayNames.get(pref.lokace) || pref.lokace}</p>
-											<p class="preference-label"><strong>Vzdálenost:</strong> {pref.radius || 10} km</p>
+											<p class="preference-label"><strong>Lokace:</strong> {pref.displayName || locationDisplayNames.get(pref.lokace) || pref.lokace}</p>
+											<p class="preference-label"><strong>Okruh:</strong> {pref.radius || 10} km</p>
 										</div>
-										<button 
-											type="button"
-											onclick={() => handleRemoveNotificationPreference(index)} 
-											class="remove-button"
-											title="Odebrat"
-										>
+										<div class="preference-actions">
+											<button 
+												type="button"
+												onclick={() => handleEditNotificationPreference(index)} 
+												class="edit-button"
+												title="Upravit"
+											>
+												<svg
+													xmlns="http://www.w3.org/2000/svg"
+													width="18"
+													height="18"
+													viewBox="0 0 24 24"
+													fill="none"
+													stroke="currentColor"
+													stroke-width="2"
+													stroke-linecap="round"
+													stroke-linejoin="round"
+												>
+													<path d="M12 20h9"></path>
+													<path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+												</svg>
+											</button>
+											<button 
+												type="button"
+												onclick={() => handleRemoveNotificationPreference(index)} 
+												class="remove-button"
+												title="Odebrat"
+											>
+												<svg
+													xmlns="http://www.w3.org/2000/svg"
+													width="18"
+													height="18"
+													viewBox="0 0 24 24"
+													fill="none"
+													stroke="currentColor"
+													stroke-width="2"
+												>
+													<path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2m3 0v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6h16zM10 11v6M14 11v6"></path>
+												</svg>
+											</button>
+										</div>
+									</div>
+								{/each}
+
+								<!-- Test Notifications Button -->
+								<button 
+									onclick={testNotifications} 
+									class="test-button"
+									disabled={isTestingNotifications || (!notifications && !emailNotifications)}
+									title={!notifications && !emailNotifications ? 'Povolte oznámení pro testování' : ''}
+								>
+									{#if isTestingNotifications}
+										<span class="spinner-small"></span>
+										Testuji oznámení...
+									{:else}
+										{#if typeof window !== 'undefined' && 'Notification' in window && Notification.permission === 'denied' && notifications && !emailNotifications}
 											<svg
 												xmlns="http://www.w3.org/2000/svg"
 												width="18"
@@ -754,11 +1116,28 @@
 												stroke="currentColor"
 												stroke-width="2"
 											>
-												<path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2m3 0v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6h16zM10 11v6M14 11v6"></path>
+												<path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+												<path d="M18.63 8A17.89 17.89 0 0 1 18 8a6 6 0 0 0-6-6"></path>
+												<path d="M6.26 6.26A5.86 5.86 0 0 0 6 8c0 7-3 9-3 9h14"></path>
+												<line x1="1" y1="1" x2="23" y2="23"></line>
 											</svg>
-										</button>
-									</div>
-								{/each}
+										{:else}
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												width="18"
+												height="18"
+												viewBox="0 0 24 24"
+												fill="none"
+												stroke="currentColor"
+												stroke-width="2"
+											>
+												<path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+												<path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+											</svg>
+										{/if}
+										Otestovat oznámení (dnes)
+									{/if}
+								</button>
 							</div>
 						{/if}
 					</div>
@@ -823,10 +1202,12 @@
 			fill="none"
 			stroke="currentColor"
 			stroke-width="2"
+			stroke-linecap="round"
+			stroke-linejoin="round"
 		>
-			<circle cx="12" cy="12" r="10"></circle>
-			<line x1="12" y1="8" x2="12" y2="12"></line>
-			<line x1="12" y1="16" x2="12.01" y2="16"></line>
+			<path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+			<line x1="12" y1="9" x2="12" y2="13"></line>
+			<line x1="12" y1="17" x2="12.01" y2="17"></line>
 		</svg>
 		<span>{errorMessage}</span>
 	</div>
@@ -1065,8 +1446,13 @@
 		justify-content: center;
 	}
 
-	.action-button:hover {
+	.action-button:hover:not(:disabled) {
 		background-color: #081d52;
+	}
+
+	.action-button:disabled {
+		opacity: 0.6;
+		cursor: not-allowed;
 	}
 
 	.password-form {
@@ -1515,6 +1901,28 @@
 		margin: 0;
 	}
 
+	.preference-actions {
+		display: flex;
+		gap: 0.5rem;
+		flex-shrink: 0;
+	}
+
+	.edit-button {
+		padding: 0.5rem;
+		background-color: transparent;
+		color: var(--color-brand-main);
+		border: 1px solid var(--color-brand-main);
+		cursor: pointer;
+		transition: all 0.2s ease;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.edit-button:hover {
+		background-color: rgba(10, 47, 131, 0.1);
+	}
+
 	.remove-button {
 		padding: 0.5rem;
 		background-color: transparent;
@@ -1525,11 +1933,75 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		flex-shrink: 0;
 	}
 
 	.remove-button:hover {
 		background-color: rgba(239, 68, 68, 0.1);
+	}
+
+	.editing-banner {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		padding: 0.75rem 1rem;
+		background-color: rgba(10, 47, 131, 0.1);
+		border: 1px solid var(--color-brand-main);
+		color: var(--color-brand-main);
+		font-size: 0.875rem;
+		font-weight: 500;
+		margin-bottom: 1rem;
+	}
+
+	.editing-banner svg {
+		flex-shrink: 0;
+	}
+
+	.editing-banner span {
+		flex: 1;
+	}
+
+	.cancel-edit-button {
+		padding: 0.25rem;
+		background: none;
+		border: none;
+		color: var(--color-brand-main);
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		opacity: 0.7;
+		transition: all 0.2s ease;
+	}
+
+	.cancel-edit-button:hover {
+		opacity: 1;
+		transform: scale(1.1);
+	}
+
+	.test-button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+		padding: 0.875rem 1rem;
+		background-color: #10b981;
+		color: white;
+		border: none;
+		font-weight: 500;
+		cursor: pointer;
+		transition: all 0.2s ease;
+		font-family: inherit;
+		width: 100%;
+		margin-top: 1rem;
+	}
+
+	.test-button:hover:not(:disabled) {
+		background-color: #059669;
+	}
+
+	.test-button:disabled {
+		opacity: 0.6;
+		cursor: not-allowed;
 	}
 
 	@media (max-width: 768px) {
@@ -1550,29 +2022,35 @@
 			font-size: 1.5rem;
 		}
 
-		.account-columns {
-			flex-direction: column;
-		}
-
-		/* Reorder columns on mobile */
-		.account-column:first-child {
+		.account-grid {
 			display: flex;
 			flex-direction: column;
 		}
 
-		/* Move user info to top */
+		.account-columns {
+			flex-direction: column;
+			display: contents;
+		}
+
+		.account-column {
+			display: contents;
+		}
+
+		/* Order: 1. User Info, 2. Notifications, 3. Security, 4. Logout */
 		.account-column:first-child .account-section:first-child {
 			order: 1;
 		}
 
-		/* Move security/password section to bottom (after notifications) */
+		.account-column:last-child .account-section {
+			order: 2;
+		}
+
 		.account-column:first-child .account-section:last-child {
 			order: 3;
 		}
 
-		/* Notifications section appears second */
-		.account-column:last-child {
-			order: 2;
+		.logout-section {
+			order: 4;
 		}
 
 		.notification-banner {

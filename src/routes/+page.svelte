@@ -66,50 +66,70 @@
 		{:else if data.items && data.items.length > 0}
 			<!-- Search and Filter Section -->
 			<div class="filter-section">
-				<div class="search-bar">
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						width="20"
-						height="20"
-						viewBox="0 0 24 24"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="2"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						class="search-icon"
-					>
-						<circle cx="11" cy="11" r="8"></circle>
-						<path d="m21 21-4.3-4.3"></path>
-					</svg>
-					<input
-						type="text"
-						bind:value={searchQuery}
-						placeholder="Hledat v oznámeních..."
-						class="search-input"
-					/>
-					{#if searchQuery}
-						<button
-							onclick={() => (searchQuery = '')}
-							class="clear-button"
-							aria-label="Vymazat hledání"
+				<div class="search-row">
+					<div class="search-bar">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="20"
+							height="20"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							class="search-icon"
 						>
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								width="16"
-								height="16"
-								viewBox="0 0 24 24"
-								fill="none"
-								stroke="currentColor"
-								stroke-width="2"
-								stroke-linecap="round"
-								stroke-linejoin="round"
+							<circle cx="11" cy="11" r="8"></circle>
+							<path d="m21 21-4.3-4.3"></path>
+						</svg>
+						<input
+							type="text"
+							bind:value={searchQuery}
+							placeholder="Hledat v oznámeních..."
+							class="search-input"
+							/>
+						{#if searchQuery}
+							<button
+								onclick={() => (searchQuery = '')}
+								class="clear-button"
+								aria-label="Vymazat hledání"
 							>
-								<line x1="18" y1="6" x2="6" y2="18"></line>
-								<line x1="6" y1="6" x2="18" y2="18"></line>
-							</svg>
-						</button>
-					{/if}
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="16"
+									height="16"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								>
+									<line x1="18" y1="6" x2="6" y2="18"></line>
+									<line x1="6" y1="6" x2="18" y2="18"></line>
+								</svg>
+							</button>
+						{/if}
+					</div>
+
+					<a href="/mapa" class="map-button">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="20"
+							height="20"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						>
+							<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+							<circle cx="12" cy="10" r="3"></circle>
+						</svg>
+						<span>Zobrazit mapu</span>
+					</a>
 				</div>
 
 				<div class="filters">
@@ -169,7 +189,7 @@
 							<div class="item-header">
 								<span class="item-category">{item.category}</span>
 								{#if isExpired(item.relevantniDo)}
-									<span class="expired-badge">Vypršelo</span>
+									<span class="expired-badge">Neaktuální</span>
 								{/if}
 							</div>
 
@@ -243,11 +263,43 @@
 		gap: 1.5rem;
 	}
 
+	.search-row {
+		display: flex;
+		gap: 1rem;
+		align-items: center;
+	}
+
 	.search-bar {
 		position: relative;
 		display: flex;
 		align-items: center;
-		width: 100%;
+		flex: 1;
+	}
+
+	.map-button {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.75rem 1.25rem;
+		background-color: var(--color-brand-main);
+		color: var(--color-surface);
+		border: none;
+		font-weight: 500;
+		font-size: 0.9375rem;
+		cursor: pointer;
+		transition: all 0.2s ease;
+		font-family: inherit;
+		text-decoration: none;
+		white-space: nowrap;
+	}
+
+	.map-button:hover {
+		background-color: #082469;
+		box-shadow: 0 2px 8px rgba(10, 47, 131, 0.2);
+	}
+
+	.map-button svg {
+		flex-shrink: 0;
 	}
 
 	.search-icon {
@@ -533,6 +585,20 @@
 			gap: 1rem;
 		}
 
+		.search-row {
+			flex-direction: column;
+			gap: 0.75rem;
+		}
+
+		.search-bar {
+			width: 100%;
+		}
+
+		.map-button {
+			width: 100%;
+			justify-content: center;
+		}
+
 		.filters {
 			flex-direction: column;
 			align-items: stretch;
@@ -567,6 +633,14 @@
 			left: 0.75rem;
 			width: 18px;
 			height: 18px;
+		}
+
+		.map-button span {
+			display: none;
+		}
+
+		.map-button {
+			padding: 0.75rem 1rem;
 		}
 	}
 </style>
