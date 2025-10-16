@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --color-brand-main: #0a2f83;
+	--color-brand-secondary: #df2237;
+
+  /* White theme colors */
+  --color-white-1: #ffffff; /* Pro karty, modály, hlavní obsah na popředí */
+  --color-white-2: #f5f5f5; /* Pro pozadí stránky (background) */
+  --color-white-3: #e8e8e8; /* Pro jemné bordery, oddělovače */
+  --color-white-4: #f9f9f9; /* Pro hover efekty na bílých kartách */
+  --color-black: #1a1a1a; /* Pro text */
+
+  /* Semantic aliases (doporučené používat) */
+  --color-bg: var(--color-white-2);
+  --color-surface: var(--color-white-1);
+  --color-border: var(--color-white-3);
+  --color-hover: var(--color-white-4);
+  --color-text: var(--color-black);
+  --color-text-hover: #4a4a4a; /* Šedá pro hover efekt na tlačítkách */
+
+  /* Utility colors - jemné odstíny */
+  --color-success: #10b981; /* Zelená pro úspěch */
+  --color-success-light: #d1fae5; /* Světlá zelená pro pozadí */
+  --color-danger: #ef4444; /* Červená pro chyby, varování */
+  --color-danger-light: #fee2e2; /* Světlá červená pro pozadí */
+  --color-warning: #f59e0b; /* Oranžová pro upozornění */
+  --color-warning-light: #fef3c7; /* Světlá oranžová pro pozadí */
+  --color-info: #3b82f6; /* Modrá pro informace */
+  --color-info-light: #dbeafe; /* Světlá modrá pro pozadí */
+
+  /* Order status colors - profesionální paleta */
+  --status-pending: #f59e0b; /* Amber - čeká na akci */
+  --status-confirmed: #3b82f6; /* Blue - potvrzeno */
+  --status-paid: #8b5cf6; /* Purple - zaplaceno */
+  --status-ready: #06b6d4; /* Cyan - připraveno */
+  --status-completed: #10b981; /* Green - dokončeno */
+  --status-cancelled: #ef4444; /* Red - zrušeno */
+
+  /* Spacing */
+  --padding-card-sm: 1rem; /* 16px - pro menší karty */
+  --padding-card-md: 1.5rem; /* 24px - pro standardní karty */
+  --padding-card-lg: 2rem; /* 32px - pro velké karty */
+
+  /* Border radius */
+  --radius-sm: 0.5rem; /* 8px - pro menší prvky, buttony */
+  --radius-md: 0.75rem; /* 12px - pro standardní karty */
+  --radius-lg: 1rem; /* 16px - pro velké karty, modály */
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.15;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
