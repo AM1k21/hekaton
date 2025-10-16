@@ -458,8 +458,9 @@
 		}
 
 		.map-title {
-			font-size: 1.25rem;
 			flex: 1;
+			text-align: center;
+			margin-left: 2.625rem;
 		}
 
 		:global(.cluster-popup-list) {
@@ -468,10 +469,6 @@
 
 		:global(.cluster-item) {
 			padding: 0.625rem;
-		}
-
-		:global(.cluster-item-title) {
-			font-size: 0.8125rem;
 		}
 	}
 </style>

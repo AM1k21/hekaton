@@ -9,7 +9,7 @@ export const POST: RequestHandler = async ({ request }) => {
 
 		// Validate input
 		if (!email || !password) {
-			return json<AuthResponse>(
+			return json(
 				{ success: false, message: 'Email and password are required' },
 				{ status: 400 }
 			);
@@ -18,7 +18,7 @@ export const POST: RequestHandler = async ({ request }) => {
 		// Find user
 		const user = findUserByEmail(email);
 		if (!user) {
-			return json<AuthResponse>(
+			return json(
 				{ success: false, message: 'Invalid email or password' },
 				{ status: 401 }
 			);
@@ -27,24 +27,24 @@ export const POST: RequestHandler = async ({ request }) => {
 		// Verify password
 		const isPasswordValid = await verifyPassword(password, user.password);
 		if (!isPasswordValid) {
-			return json<AuthResponse>(
+			return json(
 				{ success: false, message: 'Invalid email or password' },
 				{ status: 401 }
 			);
 		}
 
 		// Login successful
-		return json<AuthResponse>(
+		return json(
 			{
 				success: true,
 				message: 'Login successful',
-				user: { id: user.id, email: user.email }
+				user: { id: user.id, email: user.email, seenAlert: user.seenAlert??false }
 			},
 			{ status: 200 }
 		);
 	} catch (error) {
 		console.error('Login error:', error);
-		return json<AuthResponse>(
+		return json(
 			{ success: false, message: 'Internal server error' },
 			{ status: 500 }
 		);

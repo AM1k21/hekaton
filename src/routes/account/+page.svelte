@@ -7,6 +7,7 @@
 	interface User {
 		id: string;
 		email: string;
+		seenAlert:boolean;
 	}
 
 	let user: User | null = $state(null);
@@ -362,7 +363,8 @@
 					email: user.email,
 					notifications,
 					emailNotifications,
-					notificationPreferences
+					notificationPreferences,
+					seenAlert: user.seenAlert
 				})
 			});
 
@@ -548,6 +550,7 @@
 				// Send email notifications if enabled
 				if (emailNotifications && user?.email) {
 					try {
+						const baseUrl = window.location.origin;
 						const emailResponse = await fetch('/api/v1/notifications/send-email', {
 							method: 'POST',
 							headers: {
@@ -559,7 +562,7 @@
 									nazev: msg.nazev,
 									category: msg.category,
 									vyveseni: msg.vyveseni,
-									url: msg.url,
+									url: `${baseUrl}/detail/${msg.id}`,
 									location: msg.adresa || ''
 								}))
 							})
@@ -613,7 +616,8 @@
 		</div>
 	{:else if user}
 		<div class="account-wrapper">
-			<button onclick={goBack} class="back-button-inline">
+			<div class="account-header-row">
+				<button onclick={goBack} class="back-button-inline">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="20"
@@ -629,11 +633,12 @@
 				</svg>
 				<span>Zpět na přehled</span>
 			</button>
-			<div class="account-header">
+				<div class="account-header">
 				<h1>Můj účet</h1>
 				<p>Spravujte své údaje a nastavení</p>
 			</div>
-
+			</div>
+		
 			<div class="account-grid">
 				<div class="account-columns">
 					<!-- Left Column -->
@@ -868,7 +873,7 @@
 											<path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
 										</svg>
 										<span>Upravujete parametr #{editingIndex + 1}</span>
-										<button type="button" onclick={handleCancelEdit} class="cancel-edit-button">
+										<button type="button" onclick={handleCancelEdit} class="cancel-edit-button" title="Zrušit úpravu">
 											<svg
 												xmlns="http://www.w3.org/2000/svg"
 												width="14"
@@ -1250,7 +1255,21 @@
 		margin: 0 auto;
 	}
 
+	.account-header-row {
+		position: relative;
+		margin-bottom: 2rem;
+		/* create a block tall enough to center header vertically */
+		height: 72px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
 	.back-button-inline {
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
 		display: flex;
 		align-items: center;
 		gap: 0.5rem;
@@ -1263,7 +1282,6 @@
 		cursor: pointer;
 		transition: all 0.2s ease;
 		font-family: inherit;
-		margin-bottom: 1.5rem;
 		width: fit-content;
 		text-decoration: none;
 	}
@@ -1279,8 +1297,9 @@
 	}
 
 	.account-header {
-		margin-bottom: 2rem;
+		/* keep header text centered horizontally */
 		text-align: center;
+		margin: 0; /* spacing controlled by row */
 	}
 
 	.account-header h1 {
@@ -2005,13 +2024,19 @@
 	}
 
 	@media (max-width: 768px) {
-		.back-button-inline span {
-			display: none;
+		/* On small screens, return back button to normal flow */
+		.account-header-row {
+			height: auto;
+			align-items: flex-start;
 		}
 
 		.back-button-inline {
-			padding: 0.625rem;
 			margin-bottom: 1rem;
+			padding: 0.625rem;
+		}
+
+		.back-button-inline span {
+			display: none;
 		}
 
 		.container {

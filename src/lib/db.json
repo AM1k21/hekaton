@@ -47,17 +47,18 @@
     {
       "id": "ze6rua8fimgt5g7z7",
       "email": "admin@admin.cz",
-      "password": "1760602801507:8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+      "password": "1760621923424:481f6cc0511143ccdd7e2d1b1b94faf0a700a8b49cd13922a70b5ae28acaa8c5",
       "createdAt": "2025-10-16T08:20:01.507Z",
-      "notifications": true,
-      "emailNotifications": false,
+      "seenAlert": true,
+      "notifications": false,
+      "emailNotifications": true,
       "notificationPreferences": [
         {
           "zajmy": [
             "Ekonomika A Trh Práce"
           ],
           "lokace": "50.209211, 15.832751",
-          "radius": 88,
+          "radius": 100,
           "displayName": "Hradec Králové"
         }
       ]
@@ -77,6 +78,44 @@
           "lokace": "Trutnov"
         }
       ]
+    },
+    {
+      "id": "4pauobnh5mgtgwk0w",
+      "email": "kubacze55@gmail.com",
+      "password": "1760622039392:8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+      "createdAt": "2025-10-16T13:40:39.392Z",
+      "notifications": true,
+      "emailNotifications": true,
+      "notificationPreferences": [
+        {
+          "zajmy": [
+            "Ekonomika A Trh Práce"
+          ],
+          "lokace": "50.209211, 15.832751",
+          "radius": 100,
+          "displayName": "Hradec Králové"
+        }
+      ],
+      "seenAlert": true
+    },
+    {
+      "id": "zyihnm5cimgth3lgg",
+      "email": "realny@email.com",
+      "password": "1760622367840:8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+      "createdAt": "2025-10-16T13:46:07.840Z",
+      "notifications": true,
+      "emailNotifications": false,
+      "notificationPreferences": [
+        {
+          "zajmy": [
+            "Ekonomika A Trh Práce"
+          ],
+          "lokace": "50.209211, 15.832751",
+          "radius": 45,
+          "displayName": "Hradec Králové"
+        }
+      ],
+      "seenAlert": true
     }
   ],
   "categorizedInfo": [
@@ -1245,7 +1284,7 @@
           }
         ],
         "název": {
-          "cs": "Posuzování vlivů na ŽP- informace o oznámení záměru&quot; Cemex Czech Republic, s. r. o., Mobilní betonárna Trutnov-navýšení kapacity a ekol.provozu"
+          "cs": "Posuzování vlivů na ŽP- informace o oznámení záměru\" Cemex Czech Republic, s. r. o., Mobilní betonárna Trutnov-navýšení kapacity a ekol.provozu"
         }
       },
       "category": "Životní Prostředí",
@@ -1331,7 +1370,7 @@
           }
         ],
         "název": {
-          "cs": "Zveřejnění informace o změně integrovaného povolení pro &quot; Zařízení intenzivního chovu prasat Nahořany&quot;"
+          "cs": "Zveřejnění informace o změně integrovaného povolení pro \" Zařízení intenzivního chovu prasat Nahořany\""
         }
       },
       "category": "Životní Prostředí",
@@ -1547,7 +1586,7 @@
           }
         ],
         "název": {
-          "cs": "Posuzování vlivů na ŽP-informace o oznámení záměru: &quot; Rekreační objekty Špindlerův Mlýn - Jelení Boudy&quot;"
+          "cs": "Posuzování vlivů na ŽP-informace o oznámení záměru: \" Rekreační objekty Špindlerův Mlýn - Jelení Boudy\""
         }
       },
       "category": "Životní Prostředí",
@@ -1583,7 +1622,7 @@
           }
         ],
         "název": {
-          "cs": "Posuzování vlivů na ŽP-info o oznámení záměru&quot; Zařízení k využívání odpadů-Recyklační centrum Lučice&quot;"
+          "cs": "Posuzování vlivů na ŽP-info o oznámení záměru\" Zařízení k využívání odpadů-Recyklační centrum Lučice\""
         }
       },
       "category": "Životní Prostředí",
@@ -1833,7 +1872,7 @@
           }
         ],
         "název": {
-          "cs": "Zveřejnění informace o změně integrovaného povolení pro zařízení&quot; Lakovna kompletních karoserií - závod Kvasiny&quot;"
+          "cs": "Zveřejnění informace o změně integrovaného povolení pro zařízení\" Lakovna kompletních karoserií - závod Kvasiny\""
         }
       },
       "category": "Životní Prostředí",
@@ -1883,7 +1922,7 @@
           }
         ],
         "název": {
-          "cs": "Zveřejnění informace o změně integrovaného povolení pro &quot; Zařízení intenzivního chovu drůbeže Choustníkovo Hradiště&quot;"
+          "cs": "Zveřejnění informace o změně integrovaného povolení pro \" Zařízení intenzivního chovu drůbeže Choustníkovo Hradiště\""
         }
       },
       "category": "Životní Prostředí",
@@ -1962,7 +2001,7 @@
           }
         ],
         "název": {
-          "cs": "Posuzování vlivů na životní prostředí - zveřejnění dokumentace vlivů záměru &quot;ZEVO Opatovice, lokalita Hrobice&quot;"
+          "cs": "Posuzování vlivů na životní prostředí - zveřejnění dokumentace vlivů záměru \"ZEVO Opatovice, lokalita Hrobice\""
         }
       },
       "category": "Životní Prostředí",
@@ -2070,7 +2109,7 @@
           }
         ],
         "název": {
-          "cs": "Posuzování vlivů na ŽP - záměr &quot; Prodejna pro dům a zahradu, Dvůr Králové nad Labem, ul. Jaroměřická &quot;"
+          "cs": "Posuzování vlivů na ŽP - záměr \" Prodejna pro dům a zahradu, Dvůr Králové nad Labem, ul. Jaroměřická \""
         }
       },
       "category": "Životní Prostředí",
@@ -2106,7 +2145,7 @@
           }
         ],
         "název": {
-          "cs": "Posuzování vlivů na ŽP- informace o závazném stanovisku -  záměr&quot; Modernizace areálu farmy pro chov nosnic Opočno&quot;"
+          "cs": "Posuzování vlivů na ŽP- informace o závazném stanovisku -  záměr\" Modernizace areálu farmy pro chov nosnic Opočno\""
         }
       },
       "category": "Životní Prostředí",
@@ -2142,7 +2181,7 @@
           }
         ],
         "název": {
-          "cs": "Posuzování vlivů na ŽP- informace o oznámení záměru&quot; Modernizace zemědělského areálu Nemyčeves&quot;"
+          "cs": "Posuzování vlivů na ŽP- informace o oznámení záměru\" Modernizace zemědělského areálu Nemyčeves\""
         }
       },
       "category": "Životní Prostředí",
@@ -2336,7 +2375,7 @@
           }
         ],
         "název": {
-          "cs": "Závěr zjišťovacího řízení - rozhodnutí- VV-Záměr &quot; Navýšení kapacity Betonárka Hronov-Velké Poříčí&quot; nemůže mít vliv na ŽP"
+          "cs": "Závěr zjišťovacího řízení - rozhodnutí- VV-Záměr \" Navýšení kapacity Betonárka Hronov-Velké Poříčí\" nemůže mít vliv na ŽP"
         }
       },
       "category": "Životní Prostředí",
@@ -2422,7 +2461,7 @@
           }
         ],
         "název": {
-          "cs": "Zveřejnění informace o zrušení integrovaného povolení pro &quot; Zařízení intenzivního chovu prasat Benátky&quot;"
+          "cs": "Zveřejnění informace o zrušení integrovaného povolení pro \" Zařízení intenzivního chovu prasat Benátky\""
         }
       },
       "category": "Životní Prostředí",
@@ -2551,7 +2590,7 @@
           }
         ],
         "název": {
-          "cs": "VV- vyrozumění o zahájení  řízení - povolení záměru:&quot;Nová JOK a komun. Pražská x V Áleji x U Studánky - SP č.3. a 4. - Nová Paka v rámci OC Nová Paka &quot; "
+          "cs": "VV- vyrozumění o zahájení  řízení - povolení záměru:\"Nová JOK a komun. Pražská x V Áleji x U Studánky - SP č.3. a 4. - Nová Paka v rámci OC Nová Paka \" "
         }
       },
       "category": "Životní prostředí",
@@ -2587,7 +2626,7 @@
           }
         ],
         "název": {
-          "cs": "Stanovisko k vyhodnocení vlivů na ŽP územně plánovací dokumentace&quot; Návrh změny č. 6 územního plánu Dvůr Králové nad Labem&quot;"
+          "cs": "Stanovisko k vyhodnocení vlivů na ŽP územně plánovací dokumentace\" Návrh změny č. 6 územního plánu Dvůr Králové nad Labem\""
         }
       },
       "category": "Životní prostředí",
@@ -5230,7 +5269,7 @@
           }
         ],
         "název": {
-          "cs": "Záměr č. 30/2025 prodat dešťovou kanalizaci - SO 04 dešťová kanalizace, dešťové svody - vybudovanou v rámci stavební akce &quot; III/29913 Lochenice-průtah&quot;"
+          "cs": "Záměr č. 30/2025 prodat dešťovou kanalizaci - SO 04 dešťová kanalizace, dešťové svody - vybudovanou v rámci stavební akce \" III/29913 Lochenice-průtah\""
         }
       },
       "category": "Životní Prostředí",
@@ -5266,7 +5305,7 @@
           }
         ],
         "název": {
-          "cs": "Záměr č. 29/2025 prodat dešťovou kanalizaci - SO 103 Předměřice nad Labem - vybudovanou v rámci akce &quot;III/29913 Lochenice - průtah&quot;"
+          "cs": "Záměr č. 29/2025 prodat dešťovou kanalizaci - SO 103 Předměřice nad Labem - vybudovanou v rámci akce \"III/29913 Lochenice - průtah\""
         }
       },
       "category": "Životní Prostředí",
@@ -5302,7 +5341,7 @@
           }
         ],
         "název": {
-          "cs": "Záměr č. 28/2025 prodat dešťovou kanalizaci vybudovanou v rámci stav. akce&quot; II/284 Miletín, vjezd od Lázní Bělohrad-náměstí&quot;"
+          "cs": "Záměr č. 28/2025 prodat dešťovou kanalizaci vybudovanou v rámci stav. akce\" II/284 Miletín, vjezd od Lázní Bělohrad-náměstí\""
         }
       },
       "category": "Životní Prostředí",
@@ -6330,13 +6369,13 @@
           {
             "typ": "Digitální objekt",
             "název": {
-              "cs": "Záměr č. 111/2023 - darovat kanalizaci odvodňující mimo jiné silnici II/303 vybudovanou v rámci stavby&quot; II/303 Velké Poříčí- Hronov&quot;"
+              "cs": "Záměr č. 111/2023 - darovat kanalizaci odvodňující mimo jiné silnici II/303 vybudovanou v rámci stavby\" II/303 Velké Poříčí- Hronov\""
             },
             "url": "https://www.khk.cz/system/files/Zamer_c__111-2023.pdf"
           }
         ],
         "název": {
-          "cs": "Záměr č. 111/2023 - darovat kanalizaci odvodňující mimo jiné silnici II/303 vybudovanou v rámci stavby&quot; II/303 Velké Poříčí- Hronov&quot;"
+          "cs": "Záměr č. 111/2023 - darovat kanalizaci odvodňující mimo jiné silnici II/303 vybudovanou v rámci stavby\" II/303 Velké Poříčí- Hronov\""
         }
       },
       "category": "Veřejná Doprava A Silnice",
@@ -6366,13 +6405,13 @@
           {
             "typ": "Digitální objekt",
             "název": {
-              "cs": "Záměr č. 110/2023 - darovat kanalizaci odvodňující mimo jiné silnici II/302 vybudovanou v rámci stavby&quot;II/302 Broumov - Velká Ves, I. etapa&quot;"
+              "cs": "Záměr č. 110/2023 - darovat kanalizaci odvodňující mimo jiné silnici II/302 vybudovanou v rámci stavby\"II/302 Broumov - Velká Ves, I. etapa\""
             },
             "url": "https://www.khk.cz/system/files/Zamer_c__110-2023.pdf"
           }
         ],
         "název": {
-          "cs": "Záměr č. 110/2023 - darovat kanalizaci odvodňující mimo jiné silnici II/302 vybudovanou v rámci stavby&quot;II/302 Broumov - Velká Ves, I. etapa&quot;"
+          "cs": "Záměr č. 110/2023 - darovat kanalizaci odvodňující mimo jiné silnici II/302 vybudovanou v rámci stavby\"II/302 Broumov - Velká Ves, I. etapa\""
         }
       },
       "category": "Veřejná Doprava A Silnice",
@@ -6402,13 +6441,13 @@
           {
             "typ": "Digitální objekt",
             "název": {
-              "cs": "Záměr č. 109/2023 - darovat kanalizaci odvodňující mimo jiné silnici III/30324 vybudovanou v rámci stavby&quot; III/30324 Broumov-Šonov&quot;"
+              "cs": "Záměr č. 109/2023 - darovat kanalizaci odvodňující mimo jiné silnici III/30324 vybudovanou v rámci stavby\" III/30324 Broumov-Šonov\""
             },
             "url": "https://www.khk.cz/system/files/Zamer_c__109-2023.pdf"
           }
         ],
         "název": {
-          "cs": "Záměr č. 109/2023 - darovat kanalizaci odvodňující mimo jiné silnici III/30324 vybudovanou v rámci stavby&quot; III/30324 Broumov-Šonov&quot;"
+          "cs": "Záměr č. 109/2023 - darovat kanalizaci odvodňující mimo jiné silnici III/30324 vybudovanou v rámci stavby\" III/30324 Broumov-Šonov\""
         }
       },
       "category": "Veřejná Doprava A Silnice",
@@ -6438,13 +6477,13 @@
           {
             "typ": "Digitální objekt",
             "název": {
-              "cs": "Záměr č. 108/2023 - prodat kanalizai odvodňující mimo jiné silnici II/285 vybud.v rámci stavby &quot;II/285 Jaroměř-Nové Město nad Metují, 3.etapa"
+              "cs": "Záměr č. 108/2023 - prodat kanalizai odvodňující mimo jiné silnici II/285 vybud.v rámci stavby \"II/285 Jaroměř-Nové Město nad Metují, 3.etapa"
             },
             "url": "https://www.khk.cz/system/files/Zamer_c__108-2023.pdf"
           }
         ],
         "název": {
-          "cs": "Záměr č. 108/2023 - prodat kanalizaci odvodňující mimo jiné silnici II/285 vybud.v rámci stavby &quot;II/285 Jaroměř-Nové Město nad Metují, 3.etapa"
+          "cs": "Záměr č. 108/2023 - prodat kanalizaci odvodňující mimo jiné silnici II/285 vybud.v rámci stavby \"II/285 Jaroměř-Nové Město nad Metují, 3.etapa"
         }
       },
       "category": "Veřejná Doprava A Silnice",
@@ -6651,7 +6690,7 @@
           {
             "typ": "Digitální objekt",
             "název": {
-              "cs": "Záměr č. 36/2022 -prodat dešťovou kanalizaci &quot;SO 301 Rekonstrukce dešťové kanalizace v úseku km 0,000-1,080&quot; , stavební akce III/3041 Maršov u Úpice"
+              "cs": "Záměr č. 36/2022 -prodat dešťovou kanalizaci \"SO 301 Rekonstrukce dešťové kanalizace v úseku km 0,000-1,080\" , stavební akce III/3041 Maršov u Úpice"
             },
             "url": "https://www.khk.cz/system/files/Zamer_c__36-2022.pdf"
           }

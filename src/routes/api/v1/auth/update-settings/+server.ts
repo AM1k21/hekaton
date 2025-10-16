@@ -7,7 +7,8 @@ export const POST: RequestHandler = async ({ request }) => {
 			email, 
 			notifications, 
 			emailNotifications, 
-			notificationPreferences 
+			notificationPreferences,
+			seenAlert
 		} = await request.json();
 
 		if (!email) {
@@ -27,11 +28,18 @@ export const POST: RequestHandler = async ({ request }) => {
 			);
 		}
 
-		// Update user settings
-		db.users[userIndex].notifications = notifications;
-		db.users[userIndex].emailNotifications = emailNotifications;
-		db.users[userIndex].notificationPreferences = notificationPreferences;
-
+		if(notifications !== undefined){
+			db.users[userIndex].notifications = notifications;
+		}
+		if(emailNotifications !== undefined){
+			db.users[userIndex].emailNotifications = emailNotifications;
+		}
+		if(notificationPreferences !== undefined){
+			db.users[userIndex].notificationPreferences = notificationPreferences;
+		}
+		if(seenAlert !== undefined){
+			db.users[userIndex].seenAlert = seenAlert;
+		}
 		saveDb(db);
 
 		return new Response(

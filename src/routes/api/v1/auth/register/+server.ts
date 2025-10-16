@@ -9,7 +9,7 @@ export const POST: RequestHandler = async ({ request }) => {
 
 		// Validate input
 		if (!email || !password) {
-			return json<AuthResponse>(
+			return json(
 				{ success: false, message: 'Email and password are required' },
 				{ status: 400 }
 			);
@@ -18,7 +18,7 @@ export const POST: RequestHandler = async ({ request }) => {
 		// Validate email format
 		const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 		if (!emailRegex.test(email)) {
-			return json<AuthResponse>(
+			return json(
 				{ success: false, message: 'Invalid email format' },
 				{ status: 400 }
 			);
@@ -26,7 +26,7 @@ export const POST: RequestHandler = async ({ request }) => {
 
 		// Validate password length
 		if (password.length < 6) {
-			return json<AuthResponse>(
+			return json(
 				{ success: false, message: 'Password must be at least 6 characters' },
 				{ status: 400 }
 			);
@@ -34,7 +34,7 @@ export const POST: RequestHandler = async ({ request }) => {
 
 		// Check if user already exists
 		if (findUserByEmail(email)) {
-			return json<AuthResponse>(
+			return json(
 				{ success: false, message: 'User already exists' },
 				{ status: 409 }
 			);
@@ -50,22 +50,23 @@ export const POST: RequestHandler = async ({ request }) => {
 			createdAt: new Date().toISOString(),
 			notifications: false,
 			emailNotifications: false,
-			notificationPreferences: []
+			notificationPreferences: [],
+			seenAlert: false
 		};
 
 		addUser(newUser);
 
-		return json<AuthResponse>(
+		return json(
 			{
 				success: true,
 				message: 'User registered successfully',
-				user: { id: userId, email }
+				user: { id: userId, email, seenAlert: false }
 			},
 			{ status: 201 }
 		);
 	} catch (error) {
 		console.error('Registration error:', error);
-		return json<AuthResponse>(
+		return json(
 			{ success: false, message: 'Internal server error' },
 			{ status: 500 }
 		);

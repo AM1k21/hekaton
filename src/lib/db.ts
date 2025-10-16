@@ -16,6 +16,7 @@ interface User {
 		lokace: string;
 		radius: number;
 	}>;
+	seenAlert:boolean;
 }
 
 interface Database {

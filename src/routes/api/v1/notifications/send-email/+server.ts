@@ -14,7 +14,7 @@ export const POST: RequestHandler = async ({ request }) => {
 			return json({ success: true, message: 'No messages to send' });
 		}
 
-		const subject = `Nová oznámení na úřední desce KHK (${messages.length})`;
+		const subject = `Nová oznámení na úřední desce KHK`;
 		const html = createNotificationEmailHtml(messages);
 		const text = `Na úřední desce se objevilo ${messages.length} nových oznámení odpovídajících vašim preferencím.`;
 

@@ -70,18 +70,20 @@ const setHtmlContent = (text: string) => {
 };
 
 export const createNotificationEmailHtml = (messages: any[]) => {
+  const baseUrl = process.env.PUBLIC_BASE_URL || 'http://localhost:5173';
+  
   const messagesList = messages
     .map(
       (msg) => `
-    <div style="margin-bottom: 20px; padding: 15px; background-color: #f9fafb; border-left: 4px solid #0a2f83;">
+    <div style="margin-bottom: 20px; padding: 15px; background-color: #f9fafb; border-left: 4px solid #0a2f83; border-radius: 4px;">
       <h3 style="margin: 0 0 10px 0; color: #0a2f83; font-size: 18px;">
-        <a href="${msg.url}" style="color: #0a2f83; text-decoration: none;">${msg.nazev}</a>
+        ${msg.nazev}
       </h3>
       <p style="margin: 5px 0; font-size: 14px;"><strong>Kategorie:</strong> ${msg.category}</p>
       <p style="margin: 5px 0; font-size: 14px;"><strong>Vyvěšeno:</strong> ${msg.vyveseni}</p>
       ${msg.location ? `<p style="margin: 5px 0; font-size: 14px;"><strong>Lokace:</strong> ${msg.location}</p>` : ''}
       <p style="margin: 10px 0 0 0;">
-        <a href="${msg.url}" style="display: inline-block; background-color: #0a2f83; color: #ffffff; text-decoration: none; padding: 8px 16px; border-radius: 4px; font-size: 14px; font-weight: bold;">
+        <a href="${msg.url}" style="display: inline-block; background-color: #0a2f83; color: #ffffff; text-decoration: none; padding: 10px 20px; border-radius: 4px; font-size: 14px; font-weight: bold;">
           Zobrazit detail
         </a>
       </p>
@@ -104,12 +106,16 @@ export const createNotificationEmailHtml = (messages: any[]) => {
                     <p style="margin-bottom: 20px;">na úřední desce se objevila nová oznámení odpovídající vašim preferencím:</p>
                     ${messagesList}
                     <p style="margin-top: 30px;">Děkujeme,<br>Tým Úřední desky KHK</p>
+          <!-- Logo: remove all surrounding margin/padding and ensure it's displayed without extra spacing -->
+          <div style="margin: 0; padding: 0; text-align: left; line-height: 0;">
+            <img src="https://raw.githubusercontent.com/AM1k21/RL-Ch-Co/refs/heads/main/khk%20logo.png" alt="Královéhradecký kraj" style="display: block; margin: -6px 0 0 0; padding: 0; border: 0; line-height: 0; max-width: 250px; height: auto;" />
+          </div>
                 </td>
             </tr>
             <tr>
                 <td style="padding: 20px; background-color: #f0f7ff; text-align: center; font-size: 14px; color: #666;">
                     <p style="margin: 0;">Toto je automatická zpráva z úřední desky Královéhradeckého kraje.</p>
-                    <p style="margin: 5px 0 0 0;">Nastavení oznámení můžete spravovat ve svém účtu.</p>
+                    <p style="margin: 5px 0 0 0;">Nastavení oznámení můžete spravovat ve svém <a href="${baseUrl}/account" style="color: #0a2f83; text-decoration: none; font-weight: 500;">účtu</a>.</p>
                 </td>
             </tr>
         </table>
