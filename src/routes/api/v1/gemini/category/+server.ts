@@ -23,22 +23,27 @@ export const POST: RequestHandler = async ({ request }) => {
             chunks.push(uredniDeska.informace.slice(i, i + CHUNK_SIZE));
         }
 
-        const allCategorized: Array<{ iri: string; category: ItemCategory }> = [];
+        const allCategorized: Array<{ iri: string; category: ItemCategory; guessedLatitude: number; guessedLongitude: number }> = [];
         const availableCategories = Object.values(ItemCategory).join(', ');
 
         for (const chunk of chunks) {
-            const prompt = `Jsi AI asistent, který kategorizuje položky z úřední desky.
+            const prompt = `Jsi AI asistent, který kategorizuje položky z úřední desky a odhaduje jejich geografickou polohu.
 
 Přiřaď každé položce jednu z následujících kategorií:
 ${availableCategories}
 
 Pokud se nehodí žádná, použij "${ItemCategory.NEZARAZENO}".
 
+Pro každou položku také uhádni geografickou polohu (latitude a longitude) v Královéhradeckém kraji.
+Základní souřadnice Královéhradeckého kraje: latitude 50.2, longitude 15.8
+Pokud položka neobsahuje specifickou lokalitu, použij tyto základní souřadnice.
+Pokud položka zmiňuje konkrétní město/obec v kraji, použij jeho aproximativní souřadnice.
+
 Položky:
-${chunk.map(item => `IRI: ${item.iri}\nNázev: ${item.název}\nOkruh: ${item.okruh}`).join('\n\n')}
+${chunk.map(item => `IRI: ${item.iri}\nNázev: ${item.název?.cs || 'Bez názvu'}\nOkruh: ${item.okruh?.cs || 'Nezařazeno'}`).join('\n\n')}
 
 Vrať POUZE validní JSON pole objektů ve formátu:
-[{"iri":"...","category":"Název Kategorie"}]`;
+[{"iri":"...","category":"Název Kategorie","guessedLatitude":50.2,"guessedLongitude":15.8}]`;
 
             const geminiResponse = await ai.models.generateContent({
                 model: "gemini-2.5-flash-lite",
@@ -56,7 +61,7 @@ Vrať POUZE validní JSON pole objektů ve formátu:
                 continue;
             }
 
-            let chunkCategories: Array<{ iri: string; category: ItemCategory }>;
+            let chunkCategories: Array<{ iri: string; category: ItemCategory; guessedLatitude: number; guessedLongitude: number }>;
             try {
                 const jsonMatch = responseText.match(/\[[\s\S]*?\]/);
                 if (!jsonMatch) {
@@ -79,7 +84,9 @@ Vrať POUZE validní JSON pole objektů ve formátu:
                 console.error('JSON parse error:', parseError, '\nResponse:', responseText);
                 chunkCategories = chunk.map(item => ({ 
                     iri: item.iri, 
-                    category: ItemCategory.NEZARAZENO
+                    category: ItemCategory.NEZARAZENO,
+                    guessedLatitude: 50.2,
+                    guessedLongitude: 15.8
                 }));
             }
 
@@ -91,7 +98,9 @@ Vrať POUZE validní JSON pole objektů ve formátu:
                 const categoryData = allCategorized.find(c => c.iri === item.iri);
                 return {
                     data: item,
-                    category: categoryData?.category ?? ItemCategory.NEZARAZENO
+                    category: categoryData?.category ?? ItemCategory.NEZARAZENO,
+                    guessedLatitude: categoryData?.guessedLatitude ?? 50.2,
+                    guessedLongitude: categoryData?.guessedLongitude ?? 15.8
                 };
             });
 

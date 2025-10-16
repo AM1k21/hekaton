@@ -1,0 +1,14 @@
+{
+  "name": "MojeKHK",
+  "description": "Aplikace pro personalizovaný přístup k úředním deskám Královéhradeckého kraje",
+  "display": "standalone",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "favicon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

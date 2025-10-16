@@ -14,18 +14,56 @@
       "email": "mikulic.tablet.kluci@gmail.com",
       "password": "1760602431633:67124cb4af4c03dbfeaf6f201e98bcf25687c5c6d62f89cc3c6bd5471e1745f6",
       "createdAt": "2025-10-16T08:00:25.522Z",
-      "notifications": false,
-      "emailNotifications": false,
-      "notificationPreferences": []
+      "notifications": true,
+      "emailNotifications": true,
+      "notificationPreferences": [
+        {
+          "zajmy": [
+            "Kraj A Dotace"
+          ],
+          "lokace": "50.560885, 15.913050",
+          "radius": 74
+        },
+        {
+          "zajmy": [
+            "Investice Kraje"
+          ],
+          "lokace": "50.204371, 15.829837",
+          "radius": 10
+        },
+        {
+          "zajmy": [
+            "Ekonomika A Trh Práce"
+          ],
+          "lokace": "50.416702, 16.162287",
+          "radius": 10
+        }
+      ]
     },
     {
       "id": "ze6rua8fimgt5g7z7",
       "email": "admin@admin.cz",
       "password": "1760602801507:8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
       "createdAt": "2025-10-16T08:20:01.507Z",
-      "notifications": false,
+      "notifications": true,
       "emailNotifications": false,
       "notificationPreferences": []
+    },
+    {
+      "id": "lrok1h511mgtbamxt",
+      "email": "dophlin@ocean.see",
+      "password": "1760612618657:4559b97bda9eb255a217ee7281d896dfdcab11a48995461be1f3477460bec02a",
+      "createdAt": "2025-10-16T11:03:38.657Z",
+      "notifications": false,
+      "emailNotifications": true,
+      "notificationPreferences": [
+        {
+          "zajmy": [
+            "Veřejná Doprava A Silnice"
+          ],
+          "lokace": "Trutnov"
+        }
+      ]
     }
   ],
   "categorizedInfo": [
@@ -61,7 +99,81 @@
           "cs": "Městský úřad Třebechovice pod Orebem vyhlašuje výběrové řízení na místo - vedoucí stavebního odboru"
         }
       },
-      "category": "Ekonomika A Trh Práce"
+      "category": "Ekonomika A Trh Práce",
+      "guessedLatitude": 50.1797,
+      "guessedLongitude": 15.9014
+    },
+    {
+      "data": {
+        "typ": [
+          "Digitální objekt",
+          "Informace na úřední desce"
+        ],
+        "iri": "https://khk.cz/zdroj/úřední-deska/informace/oznameni-o-vyhlaseni-pravniho-predpisu-c9/2025",
+        "url": "https://www.khk.cz/urad/uredni-deska/oznameni-o-vyhlaseni-pravniho-predpisu-c9/2025",
+        "vyvěšení": {
+          "typ": "Časový okamžik",
+          "datum": "2025-10-16"
+        },
+        "relevantní_do": {
+          "typ": "Časový okamžik",
+          "datum": "2025-11-06"
+        },
+        "okruh": {
+          "cs": "Ostatní"
+        },
+        "dokument": [
+          {
+            "typ": "Digitální objekt",
+            "název": {
+              "cs": "oznámení.pdf"
+            },
+            "url": "https://www.khk.cz/system/files/2025-10/ozn%C3%A1men%C3%AD.pdf"
+          }
+        ],
+        "název": {
+          "cs": "Oznámení o vyhlášení právního předpisu č.9/2025"
+        }
+      },
+      "category": "Nezařazeno",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
+    },
+    {
+      "data": {
+        "typ": [
+          "Digitální objekt",
+          "Informace na úřední desce"
+        ],
+        "iri": "https://khk.cz/zdroj/úřední-deska/informace/kukhk-vyhlasuje-vyberove-rizeni-v-oboru-fyzioterapeut-pro-uzemi-mezimesti-okres-nachod",
+        "url": "https://www.khk.cz/urad/uredni-deska/kukhk-vyhlasuje-vyberove-rizeni-v-oboru-fyzioterapeut-pro-uzemi-mezimesti-okres-nachod",
+        "vyvěšení": {
+          "typ": "Časový okamžik",
+          "datum": "2025-10-16"
+        },
+        "relevantní_do": {
+          "typ": "Časový okamžik",
+          "datum": "2025-12-01"
+        },
+        "okruh": {
+          "cs": "Oznámení o vyhlášení výběrových řízení"
+        },
+        "dokument": [
+          {
+            "typ": "Digitální objekt",
+            "název": {
+              "cs": "Oznámení o VŘ - fyzioterapeut - ambulantní péče - okres Náchod - Meziměstí, č.j. KUKHK-ZD-2025-30816.pdf"
+            },
+            "url": "https://www.khk.cz/system/files/2025-10/Ozn%C3%A1men%C3%AD%20o%20V%C5%98%20-%20fyzioterapeut%20-%20ambulantn%C3%AD%20p%C3%A9%C4%8De%20-%20okres%20N%C3%A1chod%20-%20Mezim%C4%9Bst%C3%AD%2C%20%C4%8D.j.%20KUKHK-ZD-2025-30816.pdf"
+          }
+        ],
+        "název": {
+          "cs": "KÚKHK vyhlašuje výběrové řízení v oboru fyzioterapeut pro území: Meziměstí, okres Náchod"
+        }
+      },
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.4333,
+      "guessedLongitude": 16.2833
     },
     {
       "data": {
@@ -95,7 +207,9 @@
           "cs": "JES-k záměru „D35 Sadová – Plotiště – Zařízení staveniště“"
         }
       },
-      "category": "Veřejná Doprava A Silnice"
+      "category": "Životní Prostředí",
+      "guessedLatitude": 50.2167,
+      "guessedLongitude": 15.8667
     },
     {
       "data": {
@@ -136,7 +250,9 @@
           "cs": "VV-PÚP - na silnici I/33 v úseku mezi obcemi Říkov a Česká Sklalice, k. ú. Česká Skalice a k. ú. Spyta na silnici I/14 v úseku-Nové Město nad Metují a Náchod"
         }
       },
-      "category": "Veřejná Doprava A Silnice"
+      "category": "Veřejná Doprava A Silnice",
+      "guessedLatitude": 50.3333,
+      "guessedLongitude": 15.9833
     },
     {
       "data": {
@@ -170,7 +286,9 @@
           "cs": "Muzeum východních Čech v Hradci Králové vyhlašuje VŘ na pozici: MARKETINGOVÝ EXPERT/KA"
         }
       },
-      "category": "Kultura A Cestovní Ruch"
+      "category": "Kultura A Cestovní Ruch",
+      "guessedLatitude": 50.2053,
+      "guessedLongitude": 15.8307
     },
     {
       "data": {
@@ -204,7 +322,9 @@
           "cs": "KÚKHK vyhlašuje výběrové řízení na obsazení pracovního místa: referent/ka oddělení zdravotní péče a ekonomiky"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -238,7 +358,9 @@
           "cs": "KÚ KHK vyhlašuje výběrové řízení na obsazení pracovního místa: manažer/ka pro energetiku (odbor investic)"
         }
       },
-      "category": "Investice Kraje"
+      "category": "Investice Kraje",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -279,7 +401,9 @@
           "cs": "VV-PÚP na silnici I/11 v obci Blešno"
         }
       },
-      "category": "Veřejná Doprava A Silnice"
+      "category": "Veřejná Doprava A Silnice",
+      "guessedLatitude": 50.25,
+      "guessedLongitude": 15.9667
     },
     {
       "data": {
@@ -320,7 +444,9 @@
           "cs": "VV-PÚP - na silnici I/33 v úseku mezi obcemi Říkov a Česká Sklalice, k. ú. Česká Skalice a k. ú. Spyta na silnici I/14 v úseku-Nové Město nad Metují a Náchod"
         }
       },
-      "category": "Veřejná Doprava A Silnice"
+      "category": "Veřejná Doprava A Silnice",
+      "guessedLatitude": 50.3333,
+      "guessedLongitude": 15.9833
     },
     {
       "data": {
@@ -361,7 +487,9 @@
           "cs": "VV-PÚP na silnici I/37 v k. ú. Stanovice u Kuksu"
         }
       },
-      "category": "Veřejná Doprava A Silnice"
+      "category": "Veřejná Doprava A Silnice",
+      "guessedLatitude": 50.3833,
+      "guessedLongitude": 15.7833
     },
     {
       "data": {
@@ -395,7 +523,9 @@
           "cs": "Město Jaroměř vyhlašuje VŘ na pozici: Referent/ka odboru organizačního a vnitřních věcí -  úsek cestovních dokladů "
         }
       },
-      "category": "Ekonomika A Trh Práce"
+      "category": "Ekonomika A Trh Práce",
+      "guessedLatitude": 50.355,
+      "guessedLongitude": 15.7033
     },
     {
       "data": {
@@ -429,7 +559,9 @@
           "cs": "Záměr č. 83/2025-pronajmout část pozemku  v k. ú. Plačice a část pozemku v k. ú. Pražské Předměstí"
         }
       },
-      "category": "Investice Kraje"
+      "category": "Investice Kraje",
+      "guessedLatitude": 50.2167,
+      "guessedLongitude": 15.85
     },
     {
       "data": {
@@ -470,7 +602,9 @@
           "cs": "VV-PÚP na silnici I/32 v obci Kopidlno"
         }
       },
-      "category": "Veřejná Doprava A Silnice"
+      "category": "Veřejná Doprava A Silnice",
+      "guessedLatitude": 50.2667,
+      "guessedLongitude": 15.6167
     },
     {
       "data": {
@@ -504,7 +638,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: fyzioterapeut pro území: okres Náchod"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.4167,
+      "guessedLongitude": 16.1667
     },
     {
       "data": {
@@ -538,7 +674,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: zubní lékařství pro území: okres Hradec Králové"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.2053,
+      "guessedLongitude": 15.8307
     },
     {
       "data": {
@@ -572,7 +710,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: zubní lékařství pro území: okres Rychnov nad Kněžnou"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.1667,
+      "guessedLongitude": 16.1667
     },
     {
       "data": {
@@ -606,7 +746,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: zubní lékařství pro území: okres Jičín"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.4333,
+      "guessedLongitude": 15.35
     },
     {
       "data": {
@@ -640,7 +782,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: zubní lékařství pro území: okres  Náchod"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.4167,
+      "guessedLongitude": 16.1667
     },
     {
       "data": {
@@ -674,7 +818,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: zubní lékařství pro území: okres Trutnov"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.5667,
+      "guessedLongitude": 15.9167
     },
     {
       "data": {
@@ -708,7 +854,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: porodní asistentka pro území: okres Hradec Králové"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.2053,
+      "guessedLongitude": 15.8307
     },
     {
       "data": {
@@ -742,7 +890,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: porodní asistentka pro území: okres Náchod"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.4145,
+      "guessedLongitude": 16.7453
     },
     {
       "data": {
@@ -776,7 +926,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: porodní asistentka pro území: okres Trutnov"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.5935,
+      "guessedLongitude": 15.9076
     },
     {
       "data": {
@@ -810,7 +962,9 @@
           "cs": "KÚKHK oznamuje konání 8 zasedání Zastupitelstva Královéhradeckého kraje"
         }
       },
-      "category": "Nezařazeno"
+      "category": "Nezařazeno",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -851,7 +1005,9 @@
           "cs": "VV-PÚP na silnici I/16 v úseku mezi obcemi Trutnov a Zlatá Olešnice (km provozního staničení cca 176,627 - 180,084)"
         }
       },
-      "category": "Veřejná Doprava A Silnice"
+      "category": "Veřejná Doprava A Silnice",
+      "guessedLatitude": 50.5935,
+      "guessedLongitude": 15.9076
     },
     {
       "data": {
@@ -892,7 +1048,9 @@
           "cs": "VV-PÚP na silnici I/16 v obci Pilníkov, ul. Pražská a ul. Trutnovská"
         }
       },
-      "category": "Veřejná Doprava A Silnice"
+      "category": "Veřejná Doprava A Silnice",
+      "guessedLatitude": 50.5378,
+      "guessedLongitude": 15.8307
     },
     {
       "data": {
@@ -926,7 +1084,9 @@
           "cs": "Nařízení státní veterinární správy: změna mim. veter. opatření vydaných k zamezení šíření nebezpečné nákazy -katarální horačka ovcí"
         }
       },
-      "category": "Životní Prostředí"
+      "category": "Životní Prostředí",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -960,7 +1120,9 @@
           "cs": "Ministerstvo zemědělství rozhodlo  ve věci žádosti  ČRS týkající se změny rozhodnutí o přenechání rybářského práva : revír Smíchovský potok"
         }
       },
-      "category": "Životní Prostředí"
+      "category": "Životní Prostředí",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -1001,7 +1163,9 @@
           "cs": "VV-PÚP na silnici I/14 v obci Rtyně v Podkrkonoší a silnici I/16 v obci Chotěvice"
         }
       },
-      "category": "Veřejná Doprava A Silnice"
+      "category": "Veřejná Doprava A Silnice",
+      "guessedLatitude": 50.4567,
+      "guessedLongitude": 15.9431
     },
     {
       "data": {
@@ -1035,7 +1199,9 @@
           "cs": "Posuzování vlivů na ŽP- informace o oznámení záměru&quot; Cemex Czech Republic, s. r. o., Mobilní betonárna Trutnov-navýšení kapacity a ekol.provozu"
         }
       },
-      "category": "Životní Prostředí"
+      "category": "Životní Prostředí",
+      "guessedLatitude": 50.5935,
+      "guessedLongitude": 15.9076
     },
     {
       "data": {
@@ -1069,7 +1235,9 @@
           "cs": "Město Třebechovice pod Orebem vyhlašuje výběrové řízení na místo: Dotační specialista/specialistka"
         }
       },
-      "category": "Kraj A Dotace"
+      "category": "Ekonomika A Trh Práce",
+      "guessedLatitude": 50.1744,
+      "guessedLongitude": 15.9788
     },
     {
       "data": {
@@ -1117,7 +1285,9 @@
           "cs": "Zveřejnění informace o změně integrovaného povolení pro &quot; Zařízení intenzivního chovu prasat Nahořany&quot;"
         }
       },
-      "category": "Životní Prostředí"
+      "category": "Životní Prostředí",
+      "guessedLatitude": 50.1944,
+      "guessedLongitude": 16.1528
     },
     {
       "data": {
@@ -1151,7 +1321,9 @@
           "cs": "Záměr č. 79/2025-prodat pozemek v k. ú. Levín nad Cidlinou a obci Olešnice"
         }
       },
-      "category": "Investice Kraje"
+      "category": "Investice Kraje",
+      "guessedLatitude": 50.2639,
+      "guessedLongitude": 15.7014
     },
     {
       "data": {
@@ -1185,7 +1357,9 @@
           "cs": "Město Jaroměř vyhlašuje VŘ na pozici: Vedoucí oddělení investic a rozvoje města"
         }
       },
-      "category": "Investice Kraje"
+      "category": "Ekonomika A Trh Práce",
+      "guessedLatitude": 50.3564,
+      "guessedLongitude": 15.8958
     },
     {
       "data": {
@@ -1219,7 +1393,9 @@
           "cs": "Město Jaroměř vyhlašuje VŘ na pozici: Referent/ka stavebního úřadu"
         }
       },
-      "category": "Nezařazeno"
+      "category": "Ekonomika A Trh Práce",
+      "guessedLatitude": 50.3564,
+      "guessedLongitude": 15.8958
     },
     {
       "data": {
@@ -1253,7 +1429,9 @@
           "cs": "Město Jaroměř vyhlašuje VŘ na pozici: Referent/ka územního plánování "
         }
       },
-      "category": "Nezařazeno"
+      "category": "Ekonomika A Trh Práce",
+      "guessedLatitude": 50.3564,
+      "guessedLongitude": 15.8958
     },
     {
       "data": {
@@ -1287,7 +1465,9 @@
           "cs": "JES k záměru „BM Land Česko s.r.o. – Přestavba prodejny Albert na OC Baumax, k. ú. Běloves“. "
         }
       },
-      "category": "Ekonomika A Trh Práce"
+      "category": "Životní Prostředí",
+      "guessedLatitude": 50.2053,
+      "guessedLongitude": 15.8307
     },
     {
       "data": {
@@ -1321,7 +1501,9 @@
           "cs": "Posuzování vlivů na ŽP-informace o oznámení záměru: &quot; Rekreační objekty Špindlerův Mlýn - Jelení Boudy&quot;"
         }
       },
-      "category": "Životní Prostředí"
+      "category": "Životní Prostředí",
+      "guessedLatitude": 50.7156,
+      "guessedLongitude": 15.6153
     },
     {
       "data": {
@@ -1355,7 +1537,9 @@
           "cs": "Posuzování vlivů na ŽP-info o oznámení záměru&quot; Zařízení k využívání odpadů-Recyklační centrum Lučice&quot;"
         }
       },
-      "category": "Životní Prostředí"
+      "category": "Životní Prostředí",
+      "guessedLatitude": 50.3333,
+      "guessedLongitude": 15.9667
     },
     {
       "data": {
@@ -1452,7 +1636,9 @@
           "cs": "VV-MÚP na silnicích I/16L a I/16 v Nové Pace"
         }
       },
-      "category": "Veřejná Doprava A Silnice"
+      "category": "Veřejná Doprava A Silnice",
+      "guessedLatitude": 50.4417,
+      "guessedLongitude": 15.7083
     },
     {
       "data": {
@@ -1486,7 +1672,9 @@
           "cs": "Město Jaroměř vyhlašuje VŘ na pozici:   Vedoucí útvaru interního auditu a kontroly"
         }
       },
-      "category": "Nezařazeno"
+      "category": "Ekonomika A Trh Práce",
+      "guessedLatitude": 50.357,
+      "guessedLongitude": 15.374
     },
     {
       "data": {
@@ -1520,7 +1708,9 @@
           "cs": "Záměr č. 78/2025-darovat pozemek v k. ú. a obci Staré Hrady, okr. Jičín"
         }
       },
-      "category": "Investice Kraje"
+      "category": "Investice Kraje",
+      "guessedLatitude": 50.45,
+      "guessedLongitude": 15.35
     },
     {
       "data": {
@@ -1561,7 +1751,9 @@
           "cs": "VV-PÚP- na silnici I/33 v k. ú. Velký Třebešov a Říkov v extravilánu obcí"
         }
       },
-      "category": "Veřejná Doprava A Silnice"
+      "category": "Veřejná Doprava A Silnice",
+      "guessedLatitude": 50.35,
+      "guessedLongitude": 15.7
     },
     {
       "data": {
@@ -1595,7 +1787,9 @@
           "cs": "Zveřejnění informace o změně integrovaného povolení pro zařízení&quot; Lakovna kompletních karoserií - závod Kvasiny&quot;"
         }
       },
-      "category": "Životní Prostředí"
+      "category": "Životní Prostředí",
+      "guessedLatitude": 50.18,
+      "guessedLongitude": 15.95
     },
     {
       "data": {
@@ -1643,7 +1837,9 @@
           "cs": "Zveřejnění informace o změně integrovaného povolení pro &quot; Zařízení intenzivního chovu drůbeže Choustníkovo Hradiště&quot;"
         }
       },
-      "category": "Životní Prostředí"
+      "category": "Životní Prostředí",
+      "guessedLatitude": 50.3,
+      "guessedLongitude": 15.75
     },
     {
       "data": {
@@ -1684,7 +1880,9 @@
           "cs": "Veřejná vyhláška  - opatření obecné povahy - přechodná úprava provozu na silnici I/35, v k.ú. Podůlší a Dílce"
         }
       },
-      "category": "Veřejná Doprava A Silnice"
+      "category": "Veřejná Doprava A Silnice",
+      "guessedLatitude": 50.3,
+      "guessedLongitude": 15.7
     },
     {
       "data": {
@@ -1718,7 +1916,9 @@
           "cs": "Posuzování vlivů na životní prostředí - zveřejnění dokumentace vlivů záměru &quot;ZEVO Opatovice, lokalita Hrobice&quot;"
         }
       },
-      "category": "Životní Prostředí"
+      "category": "Životní Prostředí",
+      "guessedLatitude": 50.25,
+      "guessedLongitude": 15.85
     },
     {
       "data": {
@@ -1752,7 +1952,9 @@
           "cs": "Město Jaroměř vyhlašuje VŘ na pozici: Referent/ka stavebního úřadu"
         }
       },
-      "category": "Ekonomika A Trh Práce"
+      "category": "Ekonomika A Trh Práce",
+      "guessedLatitude": 50.357,
+      "guessedLongitude": 15.374
     },
     {
       "data": {
@@ -1786,7 +1988,9 @@
           "cs": "Veřejná vyhláška o možnosti převzetí písemnosti"
         }
       },
-      "category": "Nezařazeno"
+      "category": "Nezařazeno",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -1820,7 +2024,9 @@
           "cs": "Posuzování vlivů na ŽP - záměr &quot; Prodejna pro dům a zahradu, Dvůr Králové nad Labem, ul. Jaroměřická &quot;"
         }
       },
-      "category": "Životní Prostředí"
+      "category": "Životní Prostředí",
+      "guessedLatitude": 50.43,
+      "guessedLongitude": 15.98
     },
     {
       "data": {
@@ -1854,7 +2060,9 @@
           "cs": "Posuzování vlivů na ŽP- informace o závazném stanovisku -  záměr&quot; Modernizace areálu farmy pro chov nosnic Opočno&quot;"
         }
       },
-      "category": "Životní Prostředí"
+      "category": "Životní Prostředí",
+      "guessedLatitude": 50.35,
+      "guessedLongitude": 16.15
     },
     {
       "data": {
@@ -1888,7 +2096,9 @@
           "cs": "Posuzování vlivů na ŽP- informace o oznámení záměru&quot; Modernizace zemědělského areálu Nemyčeves&quot;"
         }
       },
-      "category": "Životní Prostředí"
+      "category": "Životní Prostředí",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.7
     },
     {
       "data": {
@@ -1936,7 +2146,9 @@
           "cs": "VV-PÚP na silnici I/35 c obci Újezd pod Troskami na území Královéhradeckého kraje"
         }
       },
-      "category": "Veřejná Doprava A Silnice"
+      "category": "Veřejná Doprava A Silnice",
+      "guessedLatitude": 50.45,
+      "guessedLongitude": 15.7
     },
     {
       "data": {
@@ -1970,7 +2182,9 @@
           "cs": "KÚ KHK vyhlašuje výběrové řízení na obsazení pracovního místa: referent/ka oddělení přezkumu hospodaření obcí"
         }
       },
-      "category": "Ekonomika A Trh Práce"
+      "category": "Ekonomika A Trh Práce",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -2004,7 +2218,9 @@
           "cs": "KÚ KHK vyhlašuje výběrové řízení na obsazení pracovního místa: referent/ka oddělení přípravy a realizace staveb"
         }
       },
-      "category": "Ekonomika A Trh Práce"
+      "category": "Ekonomika A Trh Práce",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -2038,7 +2254,9 @@
           "cs": "Jednotné environmentální stanovisko k záměru „Malá vodní nádrž Lično“."
         }
       },
-      "category": "Životní Prostředí"
+      "category": "Životní Prostředí",
+      "guessedLatitude": 50.3,
+      "guessedLongitude": 15.9
     },
     {
       "data": {
@@ -2072,7 +2290,9 @@
           "cs": "Závěr zjišťovacího řízení - rozhodnutí- VV-Záměr &quot; Navýšení kapacity Betonárka Hronov-Velké Poříčí&quot; nemůže mít vliv na ŽP"
         }
       },
-      "category": "Životní Prostředí"
+      "category": "Životní Prostředí",
+      "guessedLatitude": 50.4,
+      "guessedLongitude": 16.05
     },
     {
       "data": {
@@ -2106,7 +2326,9 @@
           "cs": "Oblastní charita Hradec Králové  hledá pracovníka v sociálních službách - asistenta pro Denní centrum a Noclehárnu"
         }
       },
-      "category": "Lidé A Sociální Služby"
+      "category": "Lidé A Sociální Služby",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.83
     },
     {
       "data": {
@@ -2154,7 +2376,9 @@
           "cs": "Zveřejnění informace o zrušení integrovaného povolení pro &quot; Zařízení intenzivního chovu prasat Benátky&quot;"
         }
       },
-      "category": "Životní Prostředí"
+      "category": "Životní Prostředí",
+      "guessedLatitude": 50.3,
+      "guessedLongitude": 15.7
     },
     {
       "data": {
@@ -2188,7 +2412,9 @@
           "cs": "Záměr č. 82/2025 darovat nemovité věci v k. ú. Horní Staré Město a obci Trutnov"
         }
       },
-      "category": "Kraj A Dotace"
+      "category": "Investice Kraje",
+      "guessedLatitude": 50.58,
+      "guessedLongitude": 15.93
     },
     {
       "data": {
@@ -2222,7 +2448,9 @@
           "cs": "Záměr č. 81/2025- prodat nemovité věci v k. ú. a obci Pec pod Sněžkou"
         }
       },
-      "category": "Kraj A Dotace"
+      "category": "Investice Kraje",
+      "guessedLatitude": 50.7333,
+      "guessedLongitude": 15.7333
     },
     {
       "data": {
@@ -2277,7 +2505,9 @@
           "cs": "VV- vyrozumění o zahájení  řízení - povolení záměru:&quot;Nová JOK a komun. Pražská x V Áleji x U Studánky - SP č.3. a 4. - Nová Paka v rámci OC Nová Paka &quot; "
         }
       },
-      "category": "Životní Prostředí"
+      "category": "Nezařazeno",
+      "guessedLatitude": 50.4333,
+      "guessedLongitude": 15.4333
     },
     {
       "data": {
@@ -2311,7 +2541,9 @@
           "cs": "Stanovisko k vyhodnocení vlivů na ŽP územně plánovací dokumentace&quot; Návrh změny č. 6 územního plánu Dvůr Králové nad Labem&quot;"
         }
       },
-      "category": "Životní Prostředí"
+      "category": "Životní prostředí",
+      "guessedLatitude": 50.4333,
+      "guessedLongitude": 15.5833
     },
     {
       "data": {
@@ -2345,7 +2577,9 @@
           "cs": "KÚ KHK vyhlašuje výběrové řízení na obsazení pracovního místa: odborný/á referent/ka oddělení stížností a dozoru obcí"
         }
       },
-      "category": "Ekonomika A Trh Práce"
+      "category": "Ekonomika A Trh Práce",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -2379,7 +2613,9 @@
           "cs": "Záměr č. 80/2025 darovat nemovitost pozemek st124/1, zas. plocha a nádvoří, součástí je stavby Markoušovice č. p. 113, a pozemek 91/3, zahrada - obci Velké Svatoňovice"
         }
       },
-      "category": "Kraj A Dotace"
+      "category": "Investice Kraje",
+      "guessedLatitude": 50.5833,
+      "guessedLongitude": 15.9167
     },
     {
       "data": {
@@ -2413,7 +2649,9 @@
           "cs": "Záměr č.72/2025-pronajmout nemovité věci KHK za účelem poskytování služby chráněného bydlení osob s mentálním postižením"
         }
       },
-      "category": "Lidé A Sociální Služby"
+      "category": "Lidé A Sociální Služby",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -2447,7 +2685,9 @@
           "cs": "Rada města Třebechovice pod Orebem vyhlašuje výběrové řízení na obsazení funkce Ředitel/ka Technických služeb"
         }
       },
-      "category": "Ekonomika A Trh Práce"
+      "category": "Ekonomika A Trh Práce",
+      "guessedLatitude": 50.1833,
+      "guessedLongitude": 15.5833
     },
     {
       "data": {
@@ -2481,7 +2721,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: pohotovostní služba v oboru zubní lékařství pro území: Královéhradecký kraj, okres dojížďky: Trutnov, Jičín, Náchod"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -2515,7 +2757,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: praktické lékařství pro děti a dorost pro území: okres Hradec Králové"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.2083,
+      "guessedLongitude": 15.8333
     },
     {
       "data": {
@@ -2549,7 +2793,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: zubní lékařství pro území: okres Hradec Králové"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.2083,
+      "guessedLongitude": 15.8333
     },
     {
       "data": {
@@ -2583,7 +2829,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: dětská s dorostová psychiatrie pro území: okres Hradec Králové"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.2083,
+      "guessedLongitude": 15.8333
     },
     {
       "data": {
@@ -2617,7 +2865,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: revmatologie pro území: okres Hradec Králové"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.2083,
+      "guessedLongitude": 15.8333
     },
     {
       "data": {
@@ -2651,7 +2901,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: praktické lékařství pro děti a dorost, pro území: okres Hradec Králové"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.2083,
+      "guessedLongitude": 15.8333
     },
     {
       "data": {
@@ -2685,7 +2937,9 @@
           "cs": "Správa silnic KHK přijme zaměstnance na pozici: Právník/Právnička"
         }
       },
-      "category": "Ekonomika A Trh Práce"
+      "category": "Ekonomika A Trh Práce",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -2719,7 +2973,9 @@
           "cs": "Oblastní charita Hradec Králové hledá poradce/poradkyni rané péče se zaměřením na tyflopedii"
         }
       },
-      "category": "Lidé A Sociální Služby"
+      "category": "Lidé A Sociální Služby",
+      "guessedLatitude": 50.2083,
+      "guessedLongitude": 15.8333
     },
     {
       "data": {
@@ -2744,7 +3000,9 @@
           "cs": "Nabídka nepotřebného majetku - Centrum uměleckých aktivit, příspěvková organizace "
         }
       },
-      "category": "Kultura A Cestovní Ruch"
+      "category": "Kultura A Cestovní Ruch",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -2769,7 +3027,9 @@
           "cs": "Nabídka nepotřebného majetku - Centrum uměleckých aktivit, příspěvková organizace "
         }
       },
-      "category": "Kultura A Cestovní Ruch"
+      "category": "Kultura A Cestovní Ruch",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -2803,7 +3063,9 @@
           "cs": "KÚ KHK vyhlašuje výběrové řízení na obsazení pracovního místa: odborný/á referent/ka oddělení zdravotnictví"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -2837,7 +3099,9 @@
           "cs": "Záměr č. 73/2025 -propachtovat pozemek v k. ú. Slatina u Hradce Králové a obci Hradec Králové, okr. Hradec Králové"
         }
       },
-      "category": "Kraj A Dotace"
+      "category": "Investice Kraje",
+      "guessedLatitude": 50.2083,
+      "guessedLongitude": 15.8333
     },
     {
       "data": {
@@ -2871,7 +3135,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: pohotovostní služba v oboru zubního lékařství, pro území: okres Jičín, okres Trutnov"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -2905,7 +3171,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: pohotovostní služba v oboru zubního lékařství, pro území: Trutnov"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.505,
+      "guessedLongitude": 15.916
     },
     {
       "data": {
@@ -2939,7 +3207,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: pohotovostní služba v oboru zubního lékařství, pro území: Jičín"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.437,
+      "guessedLongitude": 15.334
     },
     {
       "data": {
@@ -2973,7 +3243,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: pohotovostní služba v oboru zubního lékařství, pro území: KHK, okres centra dojížďky : Trutnov, Jičín, Náchod"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -3007,7 +3279,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: pohotovostní služba v oboru zubního lékařství, pro území: okres Trutnov"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.505,
+      "guessedLongitude": 15.916
     },
     {
       "data": {
@@ -3041,7 +3315,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: pohotovostní služba v oboru zubního lékařství, pro území: okres Jičín"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.437,
+      "guessedLongitude": 15.334
     },
     {
       "data": {
@@ -3075,7 +3351,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: pohotovostní služba v oboru zubního lékařství, pro území: okres Jičín, okres Trutnov"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.471,
+      "guessedLongitude": 15.625
     },
     {
       "data": {
@@ -3109,7 +3387,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: pohotovostní služba v oboru zubního lékařství, pro území: okres Trutnov"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.505,
+      "guessedLongitude": 15.916
     },
     {
       "data": {
@@ -3143,7 +3423,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: pohotovostní služba v oboru zubního lékařství, pro území: okres Jičín"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.437,
+      "guessedLongitude": 15.334
     },
     {
       "data": {
@@ -3177,7 +3459,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: zubní lékařství, pro území: město Police nad Metují"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.476,
+      "guessedLongitude": 16.342
     },
     {
       "data": {
@@ -3211,7 +3495,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: zubní lékařství, pro území: město Hronov"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.459,
+      "guessedLongitude": 16.227
     },
     {
       "data": {
@@ -3245,7 +3531,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: zubní lékařství, pro území: Jičín"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.437,
+      "guessedLongitude": 15.334
     },
     {
       "data": {
@@ -3279,7 +3567,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: zubní lékařství, pro území: Rychnov nad Kněžnou"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.165,
+      "guessedLongitude": 16.272
     },
     {
       "data": {
@@ -3313,7 +3603,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: zubní lékařství, pro území: Nová Paka"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.374,
+      "guessedLongitude": 15.504
     },
     {
       "data": {
@@ -3347,7 +3639,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: zubní lékařství, pro území: Kostelec nad Orlicí"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.135,
+      "guessedLongitude": 16.349
     },
     {
       "data": {
@@ -3381,7 +3675,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: zubní lékařství, pro území: Hořice"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.365,
+      "guessedLongitude": 15.642
     },
     {
       "data": {
@@ -3415,7 +3711,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: zubní lékařství, pro území: Dvůr Králové nad Labem"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.437,
+      "guessedLongitude": 16.236
     },
     {
       "data": {
@@ -3449,7 +3747,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: zubní lékařství, pro území: Broumov"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.571,
+      "guessedLongitude": 16.332
     },
     {
       "data": {
@@ -3483,7 +3783,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: všeobecné praktické lékařství, pro území:  město Žacléř"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.523,
+      "guessedLongitude": 15.949
     },
     {
       "data": {
@@ -3517,7 +3819,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: všeobecné praktické lékařství, pro území:  město Vamberk"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.118,
+      "guessedLongitude": 16.359
     },
     {
       "data": {
@@ -3551,7 +3855,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: praktické lékařství pro děti a dorost, pro území:  město Úpice"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.404,
+      "guessedLongitude": 16.035
     },
     {
       "data": {
@@ -3585,7 +3891,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: praktické lékařství pro děti a dorost, pro území:  město Hronov"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.407,
+      "guessedLongitude": 15.755
     },
     {
       "data": {
@@ -3619,7 +3927,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: praktické lékařství pro děti a dorost, pro území: obec České Meziříčí"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.158,
+      "guessedLongitude": 15.589
     },
     {
       "data": {
@@ -3653,7 +3963,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: praktické lékařství pro děti a dorost, pro území: Kostelec nad Orlicí"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.115,
+      "guessedLongitude": 15.975
     },
     {
       "data": {
@@ -3687,7 +3999,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: praktické lékařství pro děti a dorost, pro území: Hořice"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.365,
+      "guessedLongitude": 15.638
     },
     {
       "data": {
@@ -3721,7 +4035,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: praktické lékařství pro děti a dorost, pro území: Dvůr Králové nad Labem"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.437,
+      "guessedLongitude": 15.958
     },
     {
       "data": {
@@ -3755,7 +4071,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: praktické lékařství pro děti a dorost, pro území: Broumov"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.571,
+      "guessedLongitude": 16.332
     },
     {
       "data": {
@@ -3789,7 +4107,9 @@
           "cs": "Nabídka nepotřebného majetku - stolní PC, včetně klávesnic a myší (bez monitorů)."
         }
       },
-      "category": "Nezařazeno"
+      "category": "Nezařazeno",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -3823,7 +4143,9 @@
           "cs": "KÚ KHK vyhlašuje výběrové řízení na obsazení pracovního místa: vedoucí odboru kultury, památkové péče a cestovního ruchu"
         }
       },
-      "category": "Kultura A Cestovní Ruch"
+      "category": "Kultura A Cestovní Ruch",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -3857,7 +4179,9 @@
           "cs": "Opravené výsledky výběrového řízení ze dne 03.09.2025"
         }
       },
-      "category": "Nezařazeno"
+      "category": "Nezařazeno",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -3891,7 +4215,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: endokrinologie a diabetologie - na část týkající se endokrinologie, pro území: okres Náchod"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.417,
+      "guessedLongitude": 16.155
     },
     {
       "data": {
@@ -3925,7 +4251,9 @@
           "cs": "Oznámení o vyhlášení výběrového řízení v oboru: nutriční terapeut, pro území: okres Rychnov nad Kněžnou"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.175,
+      "guessedLongitude": 16.285
     },
     {
       "data": {
@@ -3959,7 +4287,9 @@
           "cs": "Záměr č. 70/2025- darovat pozemky v k. ú. a obci Vysokov"
         }
       },
-      "category": "Investice Kraje"
+      "category": "Ekonomika A Trh Práce",
+      "guessedLatitude": 50.308,
+      "guessedLongitude": 16.067
     },
     {
       "data": {
@@ -3993,7 +4323,9 @@
           "cs": "Záměr č. 71/2025 prodat pozemek v k. ú. a obci Žďárky, okr. Náchod"
         }
       },
-      "category": "Investice Kraje"
+      "category": "Ekonomika A Trh Práce",
+      "guessedLatitude": 50.508,
+      "guessedLongitude": 16.358
     },
     {
       "data": {
@@ -4125,7 +4457,9 @@
           "cs": "Záměr Královéhradeckého kraje na uzavření smluv o horizontální spolupráci"
         }
       },
-      "category": "Nezařazeno"
+      "category": "Nezařazeno",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -4159,7 +4493,9 @@
           "cs": "Záměr č. 68/2025- darování stavby silnice III/28511 včetně pozemků v k. ú. Rtyně a k. ú. Horní Dolce"
         }
       },
-      "category": "Veřejná Doprava A Silnice"
+      "category": "Veřejná Doprava A Silnice",
+      "guessedLatitude": 50.35,
+      "guessedLongitude": 16.05
     },
     {
       "data": {
@@ -4193,7 +4529,9 @@
           "cs": "Záměr č. 67/2025 - darovat pozemek v k. ú. Studnice u Náchoda"
         }
       },
-      "category": "Investice Kraje"
+      "category": "Ekonomika A Trh Práce",
+      "guessedLatitude": 50.417,
+      "guessedLongitude": 16.155
     },
     {
       "data": {
@@ -4227,7 +4565,9 @@
           "cs": "Záměr č. 69/2025 - darovat pozemky v k. ú. Meziměstí a v k. ú. Ruprechtice u Broumova"
         }
       },
-      "category": "Investice Kraje"
+      "category": "Ekonomika A Trh Práce",
+      "guessedLatitude": 50.55,
+      "guessedLongitude": 16.25
     },
     {
       "data": {
@@ -4261,7 +4601,9 @@
           "cs": "Záměr č. 64/2025 - prodat pozemek v obci Broumov"
         }
       },
-      "category": "Investice Kraje"
+      "category": "Ekonomika A Trh Práce",
+      "guessedLatitude": 50.571,
+      "guessedLongitude": 16.332
     },
     {
       "data": {
@@ -4295,7 +4637,9 @@
           "cs": "Záměr č. 63/2025-prodat soubor nemovitostí v k. ú. a obci Náchod"
         }
       },
-      "category": "Investice Kraje"
+      "category": "Ekonomika A Trh Práce",
+      "guessedLatitude": 50.417,
+      "guessedLongitude": 16.155
     },
     {
       "data": {
@@ -4329,7 +4673,9 @@
           "cs": "Záměr č. 51/2025 prodat pozemky v k. ú. a obci Týniště nad Orlicí"
         }
       },
-      "category": "Investice Kraje"
+      "category": "Ekonomika A Trh Práce",
+      "guessedLatitude": 50.15,
+      "guessedLongitude": 16.05
     },
     {
       "data": {
@@ -4363,7 +4709,9 @@
           "cs": "Výsledky výběrového řízení ze dne 25.06.2025"
         }
       },
-      "category": "Nezařazeno"
+      "category": "Ekonomika A Trh Práce",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -4397,7 +4745,9 @@
           "cs": "Záměr č.39/2025 prodat pozemek v k. ú. Lípa u Hradce Králové"
         }
       },
-      "category": "Investice Kraje"
+      "category": "Investice Kraje",
+      "guessedLatitude": 50.23,
+      "guessedLongitude": 15.85
     },
     {
       "data": {
@@ -4431,7 +4781,9 @@
           "cs": "Záměr č. 53/2025-pronájem/prodej nemovité věci v k. ú. a obci Jičín"
         }
       },
-      "category": "Ekonomika A Trh Práce"
+      "category": "Investice Kraje",
+      "guessedLatitude": 50.42,
+      "guessedLongitude": 15.52
     },
     {
       "data": {
@@ -4465,7 +4817,9 @@
           "cs": "Záměr č. 52/2025 - pronájem nemovité věci v k. ú. a obci Jičín"
         }
       },
-      "category": "Ekonomika A Trh Práce"
+      "category": "Investice Kraje",
+      "guessedLatitude": 50.42,
+      "guessedLongitude": 15.52
     },
     {
       "data": {
@@ -4499,7 +4853,9 @@
           "cs": "Záměr č. 50/2025 - pronajmout pozemek v k. ú. Pražské Předměstí Hradec Králové"
         }
       },
-      "category": "Ekonomika A Trh Práce"
+      "category": "Investice Kraje",
+      "guessedLatitude": 50.21,
+      "guessedLongitude": 15.83
     },
     {
       "data": {
@@ -4540,7 +4896,9 @@
           "cs": "Záměr č. 49/2025-darovat České republice-Ředitelství silnic a dálnic sil. pozemky v k. ú. Rybná nad Zdobnicí"
         }
       },
-      "category": "Veřejná Doprava A Silnice"
+      "category": "Veřejná Doprava A Silnice",
+      "guessedLatitude": 50.18,
+      "guessedLongitude": 16.35
     },
     {
       "data": {
@@ -4574,7 +4932,9 @@
           "cs": "Záměr č. 48/2025 - prodat pozemek v k. ú. Brtev a obci Lázně Bělohrad"
         }
       },
-      "category": "Ekonomika A Trh Práce"
+      "category": "Investice Kraje",
+      "guessedLatitude": 50.35,
+      "guessedLongitude": 15.67
     },
     {
       "data": {
@@ -4608,7 +4968,9 @@
           "cs": "Záměr č. 42/2025"
         }
       },
-      "category": "Nezařazeno"
+      "category": "Investice Kraje",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -4642,7 +5004,9 @@
           "cs": "Výsledky výběrového řízení ze dne 28.05.2025"
         }
       },
-      "category": "Nezařazeno"
+      "category": "Ekonomika A Trh Práce",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -4676,7 +5040,9 @@
           "cs": "Záměr č. 41/2025 prodat nemovité věci v k. ú. a obci Skřivany"
         }
       },
-      "category": "Ekonomika A Trh Práce"
+      "category": "Investice Kraje",
+      "guessedLatitude": 50.32,
+      "guessedLongitude": 15.73
     },
     {
       "data": {
@@ -4710,7 +5076,9 @@
           "cs": "Zveřejnění informací o provozu podatelny a podmínkách přijímání dokumentů společnosti Správa nemovitostí Královéhradeckého kraje a. s."
         }
       },
-      "category": "Nezařazeno"
+      "category": "Nezařazeno",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -4744,7 +5112,9 @@
           "cs": "Záměr č. 34/2025"
         }
       },
-      "category": "Nezařazeno"
+      "category": "Investice Kraje",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -4778,7 +5148,9 @@
           "cs": "Výsledky výběrového řízení ze dne 28.04.2025"
         }
       },
-      "category": "Nezařazeno"
+      "category": "Ekonomika A Trh Práce",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -4812,7 +5184,9 @@
           "cs": "Záměr č. 32/2025 prodej nemovité věci v k. ú. Malá Čermná, v obci Hronov "
         }
       },
-      "category": "Ekonomika A Trh Práce"
+      "category": "Investice Kraje",
+      "guessedLatitude": 50.41,
+      "guessedLongitude": 16.14
     },
     {
       "data": {
@@ -4846,7 +5220,9 @@
           "cs": "Záměr č. 30/2025 prodat dešťovou kanalizaci - SO 04 dešťová kanalizace, dešťové svody - vybudovanou v rámci stavební akce &quot; III/29913 Lochenice-průtah&quot;"
         }
       },
-      "category": "Veřejná Doprava A Silnice"
+      "category": "Životní Prostředí",
+      "guessedLatitude": 50.26,
+      "guessedLongitude": 15.92
     },
     {
       "data": {
@@ -4880,7 +5256,9 @@
           "cs": "Záměr č. 29/2025 prodat dešťovou kanalizaci - SO 103 Předměřice nad Labem - vybudovanou v rámci akce &quot;III/29913 Lochenice - průtah&quot;"
         }
       },
-      "category": "Veřejná Doprava A Silnice"
+      "category": "Životní Prostředí",
+      "guessedLatitude": 50.26,
+      "guessedLongitude": 15.92
     },
     {
       "data": {
@@ -4914,7 +5292,9 @@
           "cs": "Záměr č. 28/2025 prodat dešťovou kanalizaci vybudovanou v rámci stav. akce&quot; II/284 Miletín, vjezd od Lázní Bělohrad-náměstí&quot;"
         }
       },
-      "category": "Veřejná Doprava A Silnice"
+      "category": "Životní Prostředí",
+      "guessedLatitude": 50.35,
+      "guessedLongitude": 15.67
     },
     {
       "data": {
@@ -4948,7 +5328,9 @@
           "cs": "Výsledky výběrového řízení ze dne 12.03.2025"
         }
       },
-      "category": "Nezařazeno"
+      "category": "Ekonomika A Trh Práce",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -4973,7 +5355,9 @@
           "cs": "Prodej pozemku 1 005 m² Lázně Bělohrad - Brtev, okres Jičín"
         }
       },
-      "category": "Ekonomika A Trh Práce"
+      "category": "Investice Kraje",
+      "guessedLatitude": 50.35,
+      "guessedLongitude": 15.67
     },
     {
       "data": {
@@ -5014,7 +5398,9 @@
           "cs": "Záměr č. 12/2025 - pronajmout tech. infrastrukturu v k. ú. Litohrady a k. ú. Solnice společnosti GasNet, s.r.o."
         }
       },
-      "category": "Ekonomika A Trh Práce"
+      "category": "Investice Kraje",
+      "guessedLatitude": 50.18,
+      "guessedLongitude": 16.07
     },
     {
       "data": {
@@ -5048,7 +5434,9 @@
           "cs": "Záměr č.10/2025 -darovat v budoucnu vzniknuvší část vodovodu ve vlastnictví Královéhradeckého kraje"
         }
       },
-      "category": "Životní Prostředí"
+      "category": "Kraj A Dotace",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -5082,7 +5470,9 @@
           "cs": "Záměr č. 4/2025 prodat nemovité věci v k. ú. a obci Lázně Bělohrad"
         }
       },
-      "category": "Ekonomika A Trh Práce"
+      "category": "Kraj A Dotace",
+      "guessedLatitude": 50.365,
+      "guessedLongitude": 15.875
     },
     {
       "data": {
@@ -5116,7 +5506,9 @@
           "cs": "Výsledky výběrového řízení ze dne 15.01.2025"
         }
       },
-      "category": "Nezařazeno"
+      "category": "Ekonomika A Trh Práce",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -5150,7 +5542,9 @@
           "cs": "Záměr č. 122/2024 - V budoucnu darovat části pozemků ve vlastnictví Královéhradeckého kraje "
         }
       },
-      "category": "Kraj A Dotace"
+      "category": "Kraj A Dotace",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -5184,7 +5578,9 @@
           "cs": "Výsledky výběrového řízení ze dne 04.10.2023 - oprava z důvodu zřejmé nesprávnosti v uvedení formy zdravotní péče"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -5218,7 +5614,9 @@
           "cs": "Stanovení lhůty a a způsobu pro předkládání řádů ke schválení"
         }
       },
-      "category": "Nezařazeno"
+      "category": "Nezařazeno",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -5252,7 +5650,9 @@
           "cs": "Záměr č. 117/2024 prodat nemovité věci v k. ú. a obci Nový Bydžov"
         }
       },
-      "category": "Kraj A Dotace"
+      "category": "Kraj A Dotace",
+      "guessedLatitude": 50.333,
+      "guessedLongitude": 15.533
     },
     {
       "data": {
@@ -5286,7 +5686,9 @@
           "cs": "Výsledky výběrového řízení ze dne 04.12.2024"
         }
       },
-      "category": "Nezařazeno"
+      "category": "Ekonomika A Trh Práce",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -5320,7 +5722,9 @@
           "cs": "Výsledky výběrového řízení ze dne 06.11.2024"
         }
       },
-      "category": "Nezařazeno"
+      "category": "Ekonomika A Trh Práce",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -5361,7 +5765,9 @@
           "cs": "Záměr č. 112/2024 - v budoucnu darovat městu Náchod stavbu sjezdu( včetně navazující veřejně přístupné komunikace) "
         }
       },
-      "category": "Veřejná Doprava A Silnice"
+      "category": "Kraj A Dotace",
+      "guessedLatitude": 50.423,
+      "guessedLongitude": 16.155
     },
     {
       "data": {
@@ -5395,7 +5801,9 @@
           "cs": "Záměr č. 110/2024 - zcizit část pozemku ve vlastnictví Královéhradeckého kraje"
         }
       },
-      "category": "Kraj A Dotace"
+      "category": "Kraj A Dotace",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -5426,7 +5834,9 @@
           "cs": "Zápis o výsledku voleb do Zastupitelstva Královéhradeckého kraje"
         }
       },
-      "category": "Nezařazeno"
+      "category": "Nezařazeno",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -5457,7 +5867,9 @@
           "cs": "Záměr č. 100/2024 - vypůjčit nemovité věci v k. ú. a obci Hronov"
         }
       },
-      "category": "Kraj A Dotace"
+      "category": "Nezařazeno",
+      "guessedLatitude": 50.37,
+      "guessedLongitude": 16.05
     },
     {
       "data": {
@@ -5491,7 +5903,9 @@
           "cs": "Záměr č. 98/2024 - pronajmout soubor nemovitostí v k. ú. Opočno pod Orlickými horami a v obci Opočno"
         }
       },
-      "category": "Kraj A Dotace"
+      "category": "Kraj A Dotace",
+      "guessedLatitude": 50.105,
+      "guessedLongitude": 16.433
     },
     {
       "data": {
@@ -5525,7 +5939,9 @@
           "cs": "Zveřejnění informací o provozu podatelny a o podmínkách přijímání dokumentů Krajského úřadu Královéhradeckého kraje"
         }
       },
-      "category": "Nezařazeno"
+      "category": "Nezařazeno",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -5559,7 +5975,9 @@
           "cs": "Záměr č.65/2024 - pronajmout nebytové prostory v budově č. p. 1282"
         }
       },
-      "category": "Kraj A Dotace"
+      "category": "Kraj A Dotace",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -5590,7 +6008,9 @@
           "cs": "Záměr č. 52/2024 směnit nemovitou věc v k. ú. a obci Černíkovice"
         }
       },
-      "category": "Kraj A Dotace"
+      "category": "Nezařazeno",
+      "guessedLatitude": 50.15,
+      "guessedLongitude": 15.95
     },
     {
       "data": {
@@ -5624,7 +6044,9 @@
           "cs": "Záměr č. 39/2024 - prodej nemovitých věcí v obci Solnice, v k. ú. Solnice"
         }
       },
-      "category": "Kraj A Dotace"
+      "category": "Kraj A Dotace",
+      "guessedLatitude": 50.15,
+      "guessedLongitude": 16.317
     },
     {
       "data": {
@@ -5655,7 +6077,9 @@
           "cs": "Informace o povinnostech poskytovatele sociálních služeb podle zákona o zdravotních službách "
         }
       },
-      "category": "Lidé A Sociální Služby"
+      "category": "Lidé A Sociální Služby",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -5686,7 +6110,9 @@
           "cs": "Záměr č. 33/2024 - prodej nemovitých věcí v obci Solnice, v k. ú. Solnice a v obci Rychnov nad Kněžnou, v k. ú. Litohrady"
         }
       },
-      "category": "Kraj A Dotace"
+      "category": "Nezařazeno",
+      "guessedLatitude": 50.15,
+      "guessedLongitude": 16.317
     },
     {
       "data": {
@@ -5720,7 +6146,9 @@
           "cs": "Záměr č. 26/2024 - darovat nebo prodat část pozemku ve vlastnictví Královéhradeckého kraje"
         }
       },
-      "category": "Kraj A Dotace"
+      "category": "Investice Kraje",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -5754,7 +6182,9 @@
           "cs": "Záměr č. 21/2024 - pronaj. části pozemků ve vlastnictví KHK, v k. ú. Litohrady, v k. ú. Solnice a v k. ú. Synkov stát.org. Správa železnic"
         }
       },
-      "category": "Kraj A Dotace"
+      "category": "Investice Kraje",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -5788,7 +6218,9 @@
           "cs": "Záměr č. 20/2024 - prodat části pozemků v k. ú. Litohrady a v k. ú. Solnice státní organizaci Správa železnic"
         }
       },
-      "category": "Investice Kraje"
+      "category": "Investice Kraje",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -5822,7 +6254,9 @@
           "cs": "Prodej areálu zámku ve Skřivanech"
         }
       },
-      "category": "Kultura A Cestovní Ruch"
+      "category": "Investice Kraje",
+      "guessedLatitude": 50.35,
+      "guessedLongitude": 15.75
     },
     {
       "data": {
@@ -5856,7 +6290,9 @@
           "cs": "Prodej nemocniční budovy - bývalé plicní oddělení"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -5890,7 +6326,9 @@
           "cs": "Záměr č. 111/2023 - darovat kanalizaci odvodňující mimo jiné silnici II/303 vybudovanou v rámci stavby&quot; II/303 Velké Poříčí- Hronov&quot;"
         }
       },
-      "category": "Veřejná Doprava A Silnice"
+      "category": "Veřejná Doprava A Silnice",
+      "guessedLatitude": 50.4,
+      "guessedLongitude": 16.1
     },
     {
       "data": {
@@ -5924,7 +6362,9 @@
           "cs": "Záměr č. 110/2023 - darovat kanalizaci odvodňující mimo jiné silnici II/302 vybudovanou v rámci stavby&quot;II/302 Broumov - Velká Ves, I. etapa&quot;"
         }
       },
-      "category": "Veřejná Doprava A Silnice"
+      "category": "Veřejná Doprava A Silnice",
+      "guessedLatitude": 50.55,
+      "guessedLongitude": 16.35
     },
     {
       "data": {
@@ -5958,7 +6398,9 @@
           "cs": "Záměr č. 109/2023 - darovat kanalizaci odvodňující mimo jiné silnici III/30324 vybudovanou v rámci stavby&quot; III/30324 Broumov-Šonov&quot;"
         }
       },
-      "category": "Veřejná Doprava A Silnice"
+      "category": "Veřejná Doprava A Silnice",
+      "guessedLatitude": 50.55,
+      "guessedLongitude": 16.35
     },
     {
       "data": {
@@ -5992,7 +6434,9 @@
           "cs": "Záměr č. 108/2023 - prodat kanalizaci odvodňující mimo jiné silnici II/285 vybud.v rámci stavby &quot;II/285 Jaroměř-Nové Město nad Metují, 3.etapa"
         }
       },
-      "category": "Veřejná Doprava A Silnice"
+      "category": "Veřejná Doprava A Silnice",
+      "guessedLatitude": 50.35,
+      "guessedLongitude": 15.95
     },
     {
       "data": {
@@ -6026,7 +6470,9 @@
           "cs": "Záměr č. 104/2023 - darovat nemovité věci v k. ú. a obci Pec pod Sněžkou"
         }
       },
-      "category": "Investice Kraje"
+      "category": "Investice Kraje",
+      "guessedLatitude": 50.73,
+      "guessedLongitude": 15.75
     },
     {
       "data": {
@@ -6060,7 +6506,9 @@
           "cs": "Seznam bytů podpořených z programu - 11774 - Ukrajina - ubytovací kapacity pro uprchlíky"
         }
       },
-      "category": "Lidé A Sociální Služby"
+      "category": "Lidé A Sociální Služby",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -6091,7 +6539,9 @@
           "cs": "Tiskopisy receptů a žádanek s modrým pruhem"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Nezařazeno",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -6125,7 +6575,9 @@
           "cs": "Záměr č. 14/2023 - prodat nemovitou věc Královéhradeckého kraje"
         }
       },
-      "category": "Investice Kraje"
+      "category": "Investice Kraje",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -6159,7 +6611,9 @@
           "cs": "Záměr č. 114/2022 - prodat nemovitý majetek Královéhradeckého kraje v k. ú. Malá Čermná a obec Hronov"
         }
       },
-      "category": "Investice Kraje"
+      "category": "Investice Kraje",
+      "guessedLatitude": 50.4,
+      "guessedLongitude": 16.1
     },
     {
       "data": {
@@ -6193,7 +6647,9 @@
           "cs": "Záměr č. 36/2022 -prodat dešťovou kanalizaci SO 301 Rekonstrukce dešťové kanalizace v úseku km 0,000-1,080 , stavební akce III/3041 Maršov u Úpice"
         }
       },
-      "category": "Veřejná Doprava A Silnice"
+      "category": "Veřejná Doprava A Silnice",
+      "guessedLatitude": 50.35,
+      "guessedLongitude": 16.05
     },
     {
       "data": {
@@ -6241,7 +6697,9 @@
           "cs": "Územní energetická koncepce Královéhradeckého kraje"
         }
       },
-      "category": "Životní Prostředí"
+      "category": "Životní Prostředí",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -6282,7 +6740,9 @@
           "cs": "Energetická politika Královéhradeckého kraje"
         }
       },
-      "category": "Životní Prostředí"
+      "category": "Životní Prostředí",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -6313,7 +6773,9 @@
           "cs": "Informace MZ - k vydávání posudku o zdravotní způsobilosti fyzických osob činných při škole v přírodě nebo zotavovacích akcích jako dozor"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -6344,7 +6806,9 @@
           "cs": "Přerušení poskytování zdravotních služeb"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -6396,7 +6860,9 @@
           "cs": "Likvidace léčiv- (úhrada nákladů vzniklých v souvislosti s odevzdáním nepoužitelných léčiv a s jejich odstraněním)"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -6418,7 +6884,9 @@
           "cs": "Poskytování zdravotní péče cizincům"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Zdravotnictví A Zdraví",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -6440,7 +6908,9 @@
           "cs": "Informace o zřízení Národního registru osob nesouhlasících s posmrtným odběrem tkání a orgánů"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Nezařazeno",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -6462,7 +6932,9 @@
           "cs": "Vyhlášení dotačního programu k poskytnutí dotace na podporu hospicové péče v Královéhradeckém kraji pro rok 2025"
         }
       },
-      "category": "Zdravotnictví A Zdraví"
+      "category": "Kraj A Dotace",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -6484,7 +6956,9 @@
           "cs": "Výsledky výběrového řízení ze dne 24.01.2024"
         }
       },
-      "category": "Nezařazeno"
+      "category": "Nezařazeno",
+      "guessedLatitude": 50.2,
+      "guessedLongitude": 15.8
     },
     {
       "data": {
@@ -6506,7 +6980,9 @@
           "cs": "Veřejnoprávní smlouva č. 7/VS/2023 mezi smluvními stranami městem Jičín a obcí Jinolice"
         }
       },
-      "category": "Nezařazeno"
+      "category": "Nezařazeno",
+      "guessedLatitude": 50.425,
+      "guessedLongitude": 15.355
     }
   ]
 }

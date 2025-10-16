@@ -1,9 +1,46 @@
 <script lang="ts">
 	import Header from '$lib/components/Header.svelte';
+	import { onMount } from 'svelte';
 
 	let { data } = $props();
 
-	// Formátování data
+	let summaryState: 'loading' | 'loaded' | 'error' = $state('loading');
+	let summary: string = $state('');
+	let summaryError: string = $state('');
+
+	onMount(async () => {
+		if (data.item) {
+			try {
+				const response = await fetch('/api/v1/gemini/summary', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify(data.item)
+				});
+
+				if (!response.ok) {
+					throw new Error('Failed to fetch summary');
+				}
+
+				const result = await response.json();
+				if (result.status === 'ok' && result.summary) {
+					summary = result.summary;
+					summaryState = 'loaded';
+				} else {
+					throw new Error('Invalid response format');
+				}
+			} catch (error) {
+				console.error('Error loading summary:', error);
+				summaryError = 'AI shrnutí je momentálně nedostupné. Zkuste to prosím později.';
+				summaryState = 'error';
+			}
+		} else {
+			summaryError = 'Nenalezena data pro vytvoření shrnutí';
+			summaryState = 'error';
+		}
+	});
+
 	function formatDate(dateString: string | null) {
 		if (!dateString) return 'Neurčeno';
 		const date = new Date(dateString);
@@ -226,14 +263,14 @@
 						</div>
 						<div class="meta-content">
 							<span class="meta-label">Kategorie</span>
-							<span class="meta-value">{data.item.okruh}</span>
+							<span class="meta-value">{data.item.category}</span>
 						</div>
 					</div>
 				</div>
 
-				<!-- AI Summary placeholder -->
-				<div class="ai-summary-placeholder">
-					<div class="placeholder-header">
+				<!-- AI Summary -->
+				<div class="ai-summary" class:loading={summaryState === 'loading'} class:error={summaryState === 'error'}>
+					<div class="summary-header">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							width="24"
@@ -252,12 +289,23 @@
 							<path d="M15 13v2"></path>
 							<path d="M9 13v2"></path>
 						</svg>
-						<h3>AI Sumarizace</h3>
+						<h3>AI Shrnutí</h3>
 					</div>
-					<p class="placeholder-text">
-						Automatická sumarizace dokumentu bude brzy k dispozici. AI vám pomůže rychle pochopit
-						obsah a klíčové body této události.
-					</p>
+					
+					{#if summaryState === 'loading'}
+						<div class="summary-loading">
+							<div class="spinner"></div>
+							<p>Generuji AI shrnutí...</p>
+						</div>
+					{:else if summaryState === 'error'}
+						<p class="summary-error">
+							{summaryError || 'Nepodařilo se načíst AI shrnutí'}
+						</p>
+					{:else if summaryState === 'loaded'}
+						<div class="summary-content">
+							{@html summary}
+						</div>
+					{/if}
 				</div>
 
 				<!-- Action button -->
@@ -278,16 +326,131 @@
 							<polyline points="15 3 21 3 21 9"></polyline>
 							<line x1="10" x2="21" y1="14" y2="3"></line>
 						</svg>
-						Zobrazit originální dokument
+						Zobrazit oznámení na úřední desce
 					</a>
 				</div>
+
+				<!-- Documents -->
+				{#if data.item.dokumenty && data.item.dokumenty.length > 0}
+					{#each data.item.dokumenty as dokument, index (dokument.url || index)}
+						<a
+							href={dokument.url}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="document-card"
+						>
+							<div class="document-icon" 
+								class:pdf={dokument.url.toLowerCase().endsWith('.pdf')}
+								class:docx={dokument.url.toLowerCase().endsWith('.docx') || dokument.url.toLowerCase().endsWith('.doc')}
+								class:xlsx={dokument.url.toLowerCase().endsWith('.xlsx')}
+							>
+								{#if dokument.url.toLowerCase().endsWith('.pdf')}
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="32"
+										height="32"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									>
+										<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+										<polyline points="14 2 14 8 20 8"></polyline>
+										<line x1="16" x2="8" y1="13" y2="13"></line>
+										<line x1="16" x2="8" y1="17" y2="17"></line>
+										<polyline points="10 9 9 9 8 9"></polyline>
+									</svg>
+									<span class="file-type-badge pdf">PDF</span>
+								{:else if dokument.url.toLowerCase().endsWith('.docx') || dokument.url.toLowerCase().endsWith('.doc')}
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="32"
+										height="32"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									>
+										<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+										<polyline points="14 2 14 8 20 8"></polyline>
+										<line x1="16" x2="8" y1="13" y2="13"></line>
+										<line x1="16" x2="8" y1="17" y2="17"></line>
+										<polyline points="10 9 9 9 8 9"></polyline>
+									</svg>
+									<span class="file-type-badge docx">{dokument.url.toLowerCase().endsWith('.docx') ? 'DOCX' : 'DOC'}</span>
+								{:else if dokument.url.toLowerCase().endsWith('.xlsx')}
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="32"
+										height="32"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									>
+										<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+										<polyline points="14 2 14 8 20 8"></polyline>
+										<rect x="8" y="12" width="8" height="7" rx="1"></rect>
+										<line x1="12" x2="12" y1="12" y2="19"></line>
+										<line x1="8" x2="16" y1="15" y2="15"></line>
+									</svg>
+									<span class="file-type-badge xlsx">XLSX</span>
+								{:else}
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="32"
+										height="32"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									>
+										<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+										<polyline points="14 2 14 8 20 8"></polyline>
+									</svg>
+								{/if}
+							</div>
+							<div class="document-content">
+								<span class="document-name">{dokument.nazev}</span>
+								{#if dokument.typ}
+									<span class="document-type">{dokument.typ}</span>
+								{/if}
+							</div>
+							<div class="document-arrow">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="20"
+									height="20"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								>
+									<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+									<polyline points="15 3 21 3 21 9"></polyline>
+									<line x1="10" x2="21" y1="14" y2="3"></line>
+								</svg>
+							</div>
+						</a>
+					{/each}
+				{/if}
 
 				<!-- Additional info -->
 				<div class="info-section">
 					<h3 class="info-title">Informace o dokumentu</h3>
 					<p class="info-text">
 						Tento dokument byl zveřejněn na úřední desce Královéhradeckého kraje. Pro úplné
-						informace a případné přílohy klikněte na tlačítko výše pro zobrazení původního
+						informace klikněte na tlačítko výše pro zobrazení původního
 						dokumentu.
 					</p>
 				</div>
@@ -311,24 +474,24 @@
 	.back-button-inline {
 		display: flex;
 		align-items: center;
-		gap: 0.75rem;
-		padding: 0.875rem 1.5rem;
-		background-color: transparent;
+		gap: 0.5rem;
+		padding: 0.625rem 1rem;
+		background-color: var(--color-surface);
 		color: var(--color-brand-main);
-		border: 2px solid var(--color-brand-main);
-		font-weight: 600;
-		font-size: 1rem;
+		border: 1px solid var(--color-brand-main);
+		font-weight: 500;
+		font-size: 0.9375rem;
 		cursor: pointer;
 		transition: all 0.2s ease;
 		font-family: inherit;
 		margin-bottom: 1.5rem;
 		width: fit-content;
-		border-radius: 4px;
+		text-decoration: none;
 	}
 
 	.back-button-inline:hover {
-		background-color: rgba(10, 47, 131, 0.05);
-		border-color: var(--color-brand-main);
+		background-color: var(--color-brand-main);
+		color: var(--color-surface);
 	}
 
 	.back-button-inline svg {
@@ -360,6 +523,10 @@
 		display: flex;
 		flex-direction: column;
 		gap: 2rem;
+	}
+
+	.detail-card > .document-card:not(:first-of-type) {
+		margin-top: -1rem;
 	}
 
 	.status-bar {
@@ -471,30 +638,105 @@
 		font-weight: 500;
 	}
 
-	.ai-summary-placeholder {
+	.ai-summary {
 		padding: 1.5rem;
-		background-color: rgba(59, 130, 246, 0.05);
-		border: 1px dashed var(--color-info);
+		background-color: rgba(10, 47, 131, 0.05);
+		border: 1px solid var(--color-brand-main);
 	}
 
-	.placeholder-header {
+	.ai-summary.loading {
+		background-color: rgba(59, 130, 246, 0.05);
+		border-color: var(--color-info);
+	}
+
+	.ai-summary.error {
+		background-color: rgba(220, 38, 38, 0.05);
+		border-color: var(--color-danger);
+	}
+
+	.summary-header {
 		display: flex;
 		align-items: center;
 		gap: 0.75rem;
 		margin-bottom: 1rem;
+		color: var(--color-brand-main);
+	}
+
+	.ai-summary.loading .summary-header {
 		color: var(--color-info);
 	}
 
-	.placeholder-header h3 {
+	.ai-summary.error .summary-header {
+		color: var(--color-danger);
+	}
+
+	.summary-header h3 {
 		font-size: 1.125rem;
 		font-weight: 600;
 		margin: 0;
 	}
 
-	.placeholder-text {
+	.summary-loading {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1rem;
+		padding: 1rem 0;
+	}
+
+	.spinner {
+		width: 40px;
+		height: 40px;
+		border: 3px solid rgba(59, 130, 246, 0.2);
+		border-top-color: var(--color-info);
+		border-radius: 50%;
+		animation: spin 0.8s linear infinite;
+	}
+
+	@keyframes spin {
+		to {
+			transform: rotate(360deg);
+		}
+	}
+
+	.summary-loading p {
 		color: var(--color-text);
+		font-size: 0.9375rem;
+		margin: 0;
+	}
+
+	.summary-error {
+		color: var(--color-danger);
 		line-height: 1.6;
 		margin: 0;
+	}
+
+	.summary-content {
+		color: var(--color-text);
+		line-height: 1.6;
+	}
+
+	.summary-content :global(p) {
+		margin: 0 0 1rem 0;
+	}
+
+	.summary-content :global(p:last-child) {
+		margin-bottom: 0;
+	}
+
+	.summary-content :global(strong) {
+		font-weight: 600;
+		color: var(--color-brand-main);
+	}
+
+	.summary-content :global(ul),
+	.summary-content :global(ol) {
+		margin: 0.5rem 0;
+		padding-left: 1.5rem;
+	}
+
+	.summary-content :global(li) {
+		margin: 0.25rem 0;
 	}
 
 	.actions {
@@ -552,6 +794,111 @@
 		margin: 0;
 	}
 
+	.document-card {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		padding: 1rem;
+		background-color: var(--color-surface);
+		border: 1px solid var(--color-border);
+		text-decoration: none;
+		transition: all 0.2s ease;
+		cursor: pointer;
+	}
+
+	.document-card:hover {
+		background-color: var(--color-hover);
+		border-color: var(--color-brand-main);
+		box-shadow: 0 2px 8px rgba(10, 47, 131, 0.1);
+	}
+
+	.document-icon {
+		position: relative;
+		flex-shrink: 0;
+		width: 56px;
+		height: 56px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: rgba(220, 38, 55, 0.1);
+		color: var(--color-brand-secondary);
+		border: 1px solid var(--color-brand-secondary);
+	}
+
+	.document-icon.pdf {
+		background-color: rgba(220, 38, 55, 0.1);
+		color: var(--color-brand-secondary);
+		border-color: var(--color-brand-secondary);
+	}
+
+	.document-icon.docx {
+		background-color: rgba(33, 102, 191, 0.1);
+		color: #2166bf;
+		border-color: #2166bf;
+	}
+
+	.document-icon.xlsx {
+		background-color: rgba(16, 185, 129, 0.1);
+		color: #10b981;
+		border-color: #10b981;
+	}
+
+	.file-type-badge {
+		position: absolute;
+		bottom: -6px;
+		right: -6px;
+		background-color: var(--color-brand-secondary);
+		color: var(--color-surface);
+		font-size: 0.625rem;
+		font-weight: 700;
+		padding: 0.125rem 0.375rem;
+		letter-spacing: 0.05em;
+	}
+
+	.file-type-badge.pdf {
+		background-color: var(--color-brand-secondary);
+	}
+
+	.file-type-badge.docx {
+		background-color: #2166bf;
+	}
+
+	.file-type-badge.xlsx {
+		background-color: #10b981;
+	}
+
+	.document-content {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+		min-width: 0;
+	}
+
+	.document-name {
+		font-size: 0.9375rem;
+		font-weight: 500;
+		color: var(--color-text);
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	.document-type {
+		font-size: 0.8125rem;
+		color: var(--color-text-hover);
+	}
+
+	.document-arrow {
+		flex-shrink: 0;
+		color: var(--color-brand-main);
+		transition: transform 0.2s ease;
+	}
+
+	.document-card:hover .document-arrow {
+		transform: translateX(4px);
+	}
+
 	@media (max-width: 768px) {
 		.back-button-inline span {
 			display: none;
@@ -579,8 +926,36 @@
 			gap: 1rem;
 		}
 
-		.ai-summary-placeholder {
+		.ai-summary {
 			padding: 1rem;
+		}
+
+		.document-card {
+			padding: 0.75rem;
+			gap: 0.75rem;
+		}
+
+		.document-icon {
+			width: 48px;
+			height: 48px;
+		}
+
+		.document-icon svg {
+			width: 24px;
+			height: 24px;
+		}
+
+		.document-name {
+			font-size: 0.875rem;
+		}
+
+		.document-type {
+			font-size: 0.75rem;
+		}
+
+		.document-arrow svg {
+			width: 18px;
+			height: 18px;
 		}
 	}
 </style>

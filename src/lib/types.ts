@@ -1,5 +1,8 @@
 export interface UredniDeskaData {
-    informace: Array<{
+    informace: Array<UredniDeskaItem>;
+}
+export interface UredniDeskaItem
+    {
         typ: string[];
         iri: string;
         url: string;
@@ -12,8 +15,8 @@ export interface UredniDeskaData {
             název: { cs: string };
             url: string;
         }>;
-    }>;
-}
+    }
+
 
 export interface UserParams {
     zajmy: string[];
@@ -42,4 +45,6 @@ export enum ItemCategory {
 export interface CategorizedInformace {
     data: UredniDeskaData['informace'][0];
     category: ItemCategory;
+    guessedLatitude: number,
+    guessedLongitude: number 
 }

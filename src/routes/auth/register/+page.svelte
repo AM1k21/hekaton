@@ -64,13 +64,21 @@
 			(e.target as HTMLFormElement)?.closest('form')?.dispatchEvent(event);
 		}
 	}
+
+	function goBack() {
+		if (typeof window !== 'undefined' && window.history.length > 1) {
+			history.back();
+		} else {
+			window.location.href = '/';
+		}
+	}
 </script>
 
 <Header showLoginButton={false} />
 
-<div class="container">
-	<div class="auth-card">
-		<a href="/" class="back-button">
+<div class="wrapper">
+	<div class="back-button-container">
+		<button onclick={goBack} class="back-button-inline">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="20"
@@ -82,13 +90,16 @@
 				stroke-linecap="round"
 				stroke-linejoin="round"
 			>
-				<line x1="19" y1="12" x2="5" y2="12"></line>
-				<polyline points="12 19 5 12 12 5"></polyline>
+				<path d="M19 12H5M12 19l-7-7 7-7" />
 			</svg>
-			Zpět
-		</a>
-		<div class="auth-card-content">
-			<div class="auth-header">
+			<span>Zpět na přehled</span>
+		</button>
+	</div>
+
+	<div class="container">
+		<div class="auth-card">
+			<div class="auth-card-content">
+				<div class="auth-header">
 				<h1>Registrace</h1>
 				<p>Vytvořte si nový účet</p>
 			</div>
@@ -184,13 +195,26 @@
 		<div class="auth-footer">
 			<p>Již máte účet? <a href="/auth/login">Přihlaste se</a></p>
 		</div>
+		</div>
 	</div>
 </div>
 
 <style>
-	.container {
+	.wrapper {
 		min-height: 100vh;
 		background-color: var(--color-bg);
+		position: relative;
+	}
+
+	.back-button-container {
+		position: absolute;
+		top: 1.5rem;
+		left: 1.5rem;
+		z-index: 1;
+	}
+
+	.container {
+		min-height: 100vh;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -208,29 +232,30 @@
 		gap: 1.5rem;
 	}
 
-	.back-button {
+	.back-button-inline {
 		display: flex;
 		align-items: center;
-		gap: 0.75rem;
+		gap: 0.5rem;
+		padding: 0.625rem 1rem;
+		background-color: var(--color-surface);
 		color: var(--color-brand-main);
-		text-decoration: none;
-		font-weight: 600;
-		font-size: 1rem;
+		border: 1px solid var(--color-brand-main);
+		font-weight: 500;
+		font-size: 0.9375rem;
+		cursor: pointer;
 		transition: all 0.2s ease;
-		align-self: flex-start;
-		padding: 0.875rem 1.5rem;
-		border: 2px solid var(--color-brand-main);
-		background-color: transparent;
-		border-radius: 4px;
+		font-family: inherit;
 		width: fit-content;
+		text-decoration: none;
+		margin-bottom: 1.5rem;
 	}
 
-	.back-button:hover {
-		color: var(--color-brand-main);
-		background-color: rgba(10, 47, 131, 0.05);
+	.back-button-inline:hover {
+		background-color: var(--color-brand-main);
+		color: var(--color-surface);
 	}
 
-	.back-button svg {
+	.back-button-inline svg {
 		width: 20px;
 		height: 20px;
 	}
@@ -392,5 +417,20 @@
 	.auth-footer a:hover {
 		color: #081d52;
 		text-decoration: underline;
+	}
+
+	@media (max-width: 768px) {
+		.back-button-container {
+			top: 1rem;
+			left: 1rem;
+		}
+
+		.back-button-inline span {
+			display: none;
+		}
+
+		.back-button-inline {
+			padding: 0.625rem;
+		}
 	}
 </style>

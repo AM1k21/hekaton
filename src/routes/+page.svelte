@@ -6,7 +6,7 @@
 	// Stavy pro vyhledávání a filtraci
 	let searchQuery = $state('');
 	let selectedCategory = $state('all');
-	let showExpired = $state(true);
+	let showExpired = $state(false);
 
 	// Filtrované položky
 	let filteredItems = $derived.by(() => {
@@ -50,7 +50,7 @@
 	function resetFilters() {
 		searchQuery = '';
 		selectedCategory = 'all';
-		showExpired = true;
+		showExpired = false;
 	}
 </script>
 
@@ -126,11 +126,11 @@
 					<div class="filter-group">
 						<label class="checkbox-label">
 							<input type="checkbox" bind:checked={showExpired} class="filter-checkbox" />
-							<span>Zobrazit vypršelé</span>
+							<span>Zobrazit neaktuální</span>
 						</label>
 					</div>
 
-					{#if searchQuery || selectedCategory !== 'all' || !showExpired}
+					{#if searchQuery || selectedCategory !== 'all' || showExpired}
 						<button onclick={resetFilters} class="reset-button">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"

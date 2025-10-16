@@ -12,8 +12,9 @@ interface User {
 	notifications?: boolean;
 	emailNotifications?: boolean;
 	notificationPreferences?: Array<{
-		zajmy: string;
+		zajmy: string[];
 		lokace: string;
+		radius: number;
 	}>;
 }
 
